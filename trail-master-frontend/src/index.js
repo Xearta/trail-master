@@ -23,8 +23,21 @@ function getTrails() {
             let completion_time = trail.completion_time;
             let elevation_gain = trail.elevation_gain;
             let comments = trail.comments;
+            let comments_array = [];
 
-            new Trail(id, name, location, difficulty, completion_time, elevation_gain, comments);
+            if (comments.length > 0) {     
+                comments.forEach(comment => {
+                    let comment_id = comment.id;
+                    let comment_name = comment.name;
+                    let comment_content = comment.content;
+                    let trail_id = comment.trail_id;
+                    let comment_created = comment.created_at;
+
+                    comments_array.push(new Comment(comment_id, comment_name, comment_content, trail_id, comment_created));                
+                })                 
+            }
+
+            new Trail(id, name, location, difficulty, completion_time, elevation_gain, comments_array);
         })
 
         Trail.listTrails();
@@ -66,15 +79,7 @@ function displayTrail() {
     <li>Elevation Gain: ${trail.elevation_gain}</li>
 
     <h3>Comments:</h3>`
-
-    console.log(trail.comments);
-    
-    trail.comments.forEach(comment => {
-        commentsBox.innerHTML += `
-        <li>Name: ${comment.name}</li>
-        <li>Comment: ${comment.content}</li><br/>
-        `
-    })
+    trail.comments.forEach(comment => commentsBox.innerHTML += comment.render())
 }
 
 function displayCreateForm() {

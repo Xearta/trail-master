@@ -13,7 +13,7 @@ class Comment {
     render() {
         return `
         <li>
-        <a href="#" data-id="${this.id}>${this.name}</a>
+        <a href="#" data-id="${this.id}">${this.name}</a>
         - ${this.content}
         - ${this.trail_id}
         - ${this.created_at}

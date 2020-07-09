@@ -25,6 +25,7 @@ class Trail {
         - ${this.elevation_gain}
         - <button id="update" data-id="${this.id}">Edit</button>
         - <button id="delete" data-id="${this.id}">Delete</button>
+        </li>
         `
     }
 
