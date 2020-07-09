@@ -11,15 +11,13 @@ class Comment {
     }
 
     render() {
-        return `
-        <li>
-        <a href="#" data-id="${this.id}">${this.name}</a>
-        - ${this.content}
-        - ${this.trail_id}
-        - ${this.created_at}
-        - <button id="update" data-id="${this.id}">Edit</button>
-        - <button id="delete" data-id="${this.id}">Delete</button>
-        </li>
+        return `<li>
+        ${this.name}<br/>
+        ${this.content}<br/>
+        Trail ID: ${this.trail_id}<br/>
+        Created At: ${this.created_at}<br/>
+        <button id="delete-comment" data-id="${this.id}">Delete</button></li>
+        </li><br/>
         `
     }
 }

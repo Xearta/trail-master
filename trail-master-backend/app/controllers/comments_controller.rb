@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     end
 
     def show
-        redner json: @comment
+        render json: @comment
     end
 
     def create
@@ -31,5 +31,17 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment.destroy
+    end
+
+
+    private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_comment
+      @comment = Comment.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def comment_params
+      params.require(:comment).permit(:name, :content, :trail_id)
     end
 end

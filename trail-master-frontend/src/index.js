@@ -47,7 +47,9 @@ function getTrails() {
 
 function clearForm() {
     const trailFormDiv = document.querySelector("#trail-form");
+    const CommentFormDiv = document.querySelector("#comments-form");
     trailFormDiv.innerHTML = "";
+    CommentFormDiv.innerHTML = "";
 }
 
 function attachClickToLinks() {
@@ -58,8 +60,8 @@ function attachClickToLinks() {
 
     document.querySelector("#trail-form-btn").addEventListener('click', displayCreateForm);
     document.querySelector("#all-trails-btn").addEventListener('click', getTrails);
-    document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail))
-    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail))
+    document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail));
+    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));    
 }
 
 function displayTrail() {
@@ -72,14 +74,17 @@ function displayTrail() {
     const trail = Trail.all.find(trail => trail.id == id);
 
     main.innerHTML += `
-    <h2>${trail.name}</h2>
+    <h2 data-id="${id}">${trail.name}</h2>
     <li>Location: ${trail.location}</li>
     <li>Difficulty: ${trail.difficulty}</li>
     <li>Time to Complete: ${trail.completion_time}</li>
     <li>Elevation Gain: ${trail.elevation_gain}</li>
 
-    <h3>Comments:</h3>`
+    <h3>Comments:</h3>
+    <button id="addComment">Add A Comment</button>`
     trail.comments.forEach(comment => commentsBox.innerHTML += comment.render())
+    document.querySelector("#addComment").addEventListener('click', displayCommentForm);
+    document.querySelectorAll('#delete-comment').forEach(btn => btn.addEventListener('click', removeComment));
 }
 
 function displayCreateForm() {
@@ -177,13 +182,75 @@ function updateTrail() {
 
 }
 
-
 function removeTrail() {
     let id = event.target.dataset.id;
     event.preventDefault();
     clearForm();
 
     fetch(BASE_URL+"/trails/"+id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    .then(event.target.parentElement.remove())
+}
+
+
+
+// Add Comments
+function displayCommentForm() {
+    const commentsFormDiv = document.querySelector("#comments-form");
+    let form = `
+            <form>
+                <label>Name: </label>
+                <input type="text" id="commenter-name">
+                <label>Comment Text: </label>
+                <input type="text" id="comment-text">
+                <input type="submit">
+            </form>            
+            `
+    commentsFormDiv.innerHTML = form;
+    document.querySelector('form').addEventListener('submit', createComment);
+}
+
+
+function createComment() {
+    event.preventDefault();
+    let id;
+    let name = document.querySelector('#commenter-name').value;
+    let content = document.querySelector('#comment-text').value;
+    let trail_id = document.querySelector('#main h2').dataset.id;
+    let commentsBox = document.querySelector('#commentsBox ul');
+
+    let comment = new Comment(id, name, content, trail_id);
+
+    fetch(BASE_URL+'/comments', {
+        method: 'POST',
+        body: JSON.stringify(comment),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(newComment => {
+        console.log(newComment);
+        clearForm();
+        commentsBox.innerHTML += comment.render();
+    })    
+}
+
+
+
+// Delete Comments
+function removeComment() {
+    let id = event.target.dataset.id;
+    event.preventDefault();
+    clearForm();
+
+    fetch(BASE_URL+'/comments/'+id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
