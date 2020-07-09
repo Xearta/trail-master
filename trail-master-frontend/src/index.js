@@ -11,18 +11,20 @@ function getTrails() {
     fetch(BASE_URL+"/trails")
     .then(resp => resp.json())
     .then(trails => {
-        main.innerHTML += trails.map(trail => `
-            <li>
-                <a href="#" data-id="${trail.id}">${trail.name}</a>
-                - ${trail.location}
-                - ${trail.difficulty}
-                - ${trail.completion_time}
-                - ${trail.elevation_gain}
-                - <button id="update" data-id="${trail.id}">Edit</button>
-                - <button id="delete" data-id="${trail.id}">Delete</button>
-            </li>
-        `).join('')
+        Trail.all = [];
 
+        trails.map(trail => {
+            let id = trail.id;
+            let name = trail.name;
+            let location =  trail.location;
+            let difficulty = trail.difficulty;
+            let completion_time = trail.completion_time;
+            let elevation_gain = trail.elevation_gain;
+
+            new Trail(id, name, location, difficulty, completion_time, elevation_gain);
+        })
+
+        Trail.listTrails();
         attachClickToLinks();
     })
 }
@@ -46,21 +48,18 @@ function attachClickToLinks() {
 
 function displayTrail() {
     clearForm();
-    let id = event.target.dataset.id;
     const main = document.querySelector("#main");
     main.innerHTML = "";
+    let id = event.target.dataset.id;
+    const trail = Trail.all.find(trail => trail.id == id);
 
-    fetch(BASE_URL+'/trails/'+id)
-    .then(resp => resp.json())
-    .then(trail => {
-        main.innerHTML += `
-        <h2>${trail.name}</h2>
-        <li>Location: ${trail.location}</li>
-        <li>Difficulty: ${trail.difficulty}</li>
-        <li>Time to Complete: ${trail.completion_time}</li>
-        <li>Elevation Gain: ${trail.elevation_gain}</li>
-          `
-    })
+    main.innerHTML += `
+    <h2>${trail.name}</h2>
+    <li>Location: ${trail.location}</li>
+    <li>Difficulty: ${trail.difficulty}</li>
+    <li>Time to Complete: ${trail.completion_time}</li>
+    <li>Elevation Gain: ${trail.elevation_gain}</li>
+    `
 }
 
 function displayCreateForm() {
@@ -86,69 +85,58 @@ function displayCreateForm() {
 
 function createTrail() {
     event.preventDefault();
-    const trail = {
-        name: document.querySelector('#name').value,
-        location: document.querySelector('#location').value,
-        difficulty: document.querySelector('#difficulty').value,
-        completion_time: document.querySelector('#completion_time').value,
-        elevation_gain: document.querySelector('#elevation_gain').value
-    }
+    let id = (Trail.all[Trail.all.length-1].id)+1       // This isn't working but it is adding a new id correctly
+    let name = document.querySelector('#name').value;
+    let location =  document.querySelector('#location').value;
+    let difficulty = document.querySelector('#difficulty').value;
+    let completion_time = document.querySelector('#completion_time').value;
+    let elevation_gain = document.querySelector('#elevation_gain').value;
 
-    fetch(BASE_URL+'/trails', {
-        method: "POST",
+
+    let trail = new Trail(id, name, location, difficulty, completion_time, elevation_gain);
+
+    fetch(BASE_URL+'/trails/', {
+        method: 'POST',
         body: JSON.stringify(trail),
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
     })
-    .then(resp => resp.json())
-    .then(trail => {
-        document.querySelector('#main').innerHTML += `
-                        <li>
-                            <a href="#" data-id="${trail.id}">${trail.name}</a>
-                            - ${trail.location}
-                            - ${trail.difficulty}
-                            - ${trail.completion_time}
-                            - ${trail.elevation_gain}
-                        </li>
-                                            `
-        getTrails();
-    })
+    .then(getTrails())
 }
 
 function editTrail() {
     let id = event.target.dataset.id;
+    const trail = Trail.all.find(trail => trail.id == id);
     event.preventDefault();
     clearForm();
 
-    fetch(BASE_URL+'/trails/'+id)
-    .then(resp => resp.json())
-    .then(trail => {
-        const trailFormDiv = document.querySelector("#trail-form");
+    const trailFormDiv = document.querySelector("#trail-form");
         let form = `
-                    <form data-id="${id}">
-                        <label>Trail Name:</label>
-                        <input type="text" id="name" value="${trail.name}">
-                        <label>Location:</label>
-                        <input type="text" id="location" value="${trail.location}">
-                        <label>Difficulty:</label>
-                        <input type="text" id="difficulty" value="${trail.difficulty}">
-                        <label>Time To Complete:</label>
-                        <input type="text" id="completion_time" value="${trail.completion_time}">
-                        <label>Elevation Gain:</label>
-                        <input type="text" id="elevation_gain" value="${trail.elevation_gain}">
-                        <input type="submit">
-                    </form>
-                    `
+        <form data-id="${id}">
+            <label>Trail Name:</label>
+            <input type="text" id="name" value="${trail.name}">
+            <label>Location:</label>
+            <input type="text" id="location" value="${trail.location}">
+            <label>Difficulty:</label>
+            <input type="text" id="difficulty" value="${trail.difficulty}">
+            <label>Time To Complete:</label>
+            <input type="text" id="completion_time" value="${trail.completion_time}">
+            <label>Elevation Gain:</label>
+            <input type="text" id="elevation_gain" value="${trail.elevation_gain}">
+            <input type="submit">
+        </form>
+        `
         trailFormDiv.innerHTML = form;
         document.querySelector('form').addEventListener('submit', updateTrail);
-    })
 }
+
 
 function updateTrail() {
     event.preventDefault();
     let id = event.target.dataset.id;
+
     const trail = {
         name: document.querySelector('#name').value,
         location: document.querySelector('#location').value,
@@ -165,19 +153,8 @@ function updateTrail() {
             'Accept': 'application/json'
         }
     })
-    .then(resp => resp.json())
-    .then(trail => {
-        document.querySelector(`li a[data-id='${id}']`).parentElement.innerHTML = `
-                        <li>
-                            <a href="#" data-id="${trail.id}">${trail.name}</a>
-                            - ${trail.location}
-                            - ${trail.difficulty}
-                            - ${trail.completion_time}
-                            - ${trail.elevation_gain}
-                        </li>
-                                            `
-        getTrails();
-    })
+    .then(getTrails());
+
 }
 
 
@@ -194,4 +171,48 @@ function removeTrail() {
         }
     })
     .then(event.target.parentElement.remove())
+}
+
+
+
+
+
+
+
+/*
+**** CLASS ****
+*/
+class Trail {
+    static all = [];
+    
+    constructor(id, name, location, difficulty, completion_time, elevation_gain) {
+        this.id = id;
+        this.name = name
+        this.location = location
+        this.difficulty = difficulty
+        this.completion_time = completion_time
+        this.elevation_gain = elevation_gain
+        Trail.all.push(this);
+    }
+
+    render() {
+        return `
+                <li>
+                <a href="#" data-id="${this.id}">${this.name}</a>
+                - ${this.location}
+                - ${this.difficulty}
+                - ${this.completion_time}
+                - ${this.elevation_gain}
+                - <button id="update" data-id="${this.id}">Edit</button>
+                - <button id="delete" data-id="${this.id}">Delete</button>
+                `
+    }
+
+    static listTrails() {
+        const main = document.querySelector("#main");
+        main.innerHTML = "";
+
+        
+        Trail.all.forEach(trail => main.innerHTML += trail.render())
+    }
 }
