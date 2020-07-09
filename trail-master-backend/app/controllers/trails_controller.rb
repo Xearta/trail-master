@@ -3,9 +3,9 @@ class TrailsController < ApplicationController
 
   # GET /trails
   def index
-    @trails = Trail.all
+    trails = Trail.all
 
-    render json: @trails
+    render json: trails
   end
 
   # GET /trails/1
