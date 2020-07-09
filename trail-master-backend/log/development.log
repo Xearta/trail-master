@@ -12481,3 +12481,958 @@ Processing by TrailsController#index as HTML
 Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 7.5ms | Allocations: 1452)
 
 
+Started GET "/trails" for ::1 at 2020-07-09 14:23:01 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:23:01 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:23:01 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:23:01 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:23:01 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/trails" for ::1 at 2020-07-09 14:23:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3997253605074152955)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (2020070922402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "content" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "2020070922402"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3997253605074152955)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/trails" for ::1 at 2020-07-09 14:23:19 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.71ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 30.9ms | Allocations: 17864)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+Started GET "/trails" for ::1 at 2020-07-09 14:23:20 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1464)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+Started GET "/trails" for ::1 at 2020-07-09 14:23:22 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1464)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+Started GET "/trails" for ::1 at 2020-07-09 14:24:38 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:24:38 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrailsController#index as */*
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Load (2.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.26ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.41ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 9.7ms | Allocations: 13459)
+
+
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 69.7ms | Allocations: 16194)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+Started GET "/trails" for ::1 at 2020-07-09 14:24:39 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.75ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.1ms | Allocations: 1464)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.trail_id does not exist
+LINE 1: SELECT "comments".* FROM "comments" WHERE "comments"."trail_...
+                                                  ^
+):
+  
+app/controllers/trails_controller.rb:8:in `index'
+Started GET "/trails" for ::1 at 2020-07-09 14:25:01 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 38ms (Views: 26.4ms | ActiveRecord: 5.4ms | Allocations: 9748)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:25:03 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (3.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 3.4ms | Allocations: 1473)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:25:05 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1473)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:25:06 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (6.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.86ms)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 6.8ms | Allocations: 1473)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:25:12 -0400
+  
+SyntaxError (/Users/tanner/projects/trail-master/trail-master-backend/app/controllers/comments_controller.rb:34: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/comments_controller.rb:34: syntax error, unexpected end-of-input, expecting end
+app/controllers/comments_controller.rb:34: syntax error, unexpected end-of-input, expecting end
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:25:23 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.0ms | Allocations: 74242)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `comments' for #<CommentsController:0x00007fef6ca9d888>
+Did you mean?  @comments):
+  
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:25:32 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.6ms | Allocations: 1881)
+
+
+Started GET "/trails/2/comments" for ::1 at 2020-07-09 14:25:36 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"2"}
+  [1m[36mComment Load (6.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 6.7ms | Allocations: 984)
+
+
+Started GET "/trails/2/comments/1" for ::1 at 2020-07-09 14:25:42 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"trail_id"=>"2", "id"=>"1"}
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms | Allocations: 35999)
+
+
+  
+NoMethodError (undefined method `set_comment' for #<CommentsController:0x00007fef6e2a3090>):
+  
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/trails/1/comments/" for ::1 at 2020-07-09 14:25:54 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 983)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (79.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "trail_master_backend_development"[0m
+  [1m[35m (44.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "trail_master_backend_test"[0m
+  [1m[35m (243.6ms)[0m  [1m[35mCREATE DATABASE "trail_master_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (97.4ms)[0m  [1m[35mCREATE DATABASE "trail_master_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3997253605074152955)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTrails (20200709011401)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "trails" ("id" bigserial primary key, "name" character varying, "location" character varying, "difficulty" integer, "completion_time" character varying, "elevation_gain" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200709011401"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20200709220402)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "content" character varying, "trail_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200709220402"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-09 18:28:27.906730"], ["updated_at", "2020-07-09 18:28:27.906730"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3997253605074152955)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/trails/1/comments/" for ::1 at 2020-07-09 14:28:36 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 5.8ms | Allocations: 3242)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:28:38 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 17ms (Views: 3.2ms | ActiveRecord: 8.5ms | Allocations: 2413)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:28:49 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (9.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 9.8ms | Allocations: 1011)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:28:49 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.5ms | Allocations: 1011)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:29:29 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 1011)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:29:48 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (3.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 3.3ms | Allocations: 992)
+
+
+Started POST "/trails/" for ::1 at 2020-07-09 14:29:54 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:29:54 -0400
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"Trail 1", "location"=>"Location 1", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200", "trail"=>{"name"=>"Trail 1", "location"=>"Location 1", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (3.3ms)[0m  [1m[32mINSERT INTO "trails" ("name", "location", "difficulty", "completion_time", "elevation_gain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Trail 1"], ["location", "Location 1"], ["difficulty", 3], ["completion_time", "200"], ["elevation_gain", 200], ["created_at", "2020-07-09 18:29:54.524494"], ["updated_at", "2020-07-09 18:29:54.524494"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 201 Created in 48ms (Views: 12.1ms | ActiveRecord: 18.8ms | Allocations: 10033)
+
+
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1234)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:04 -0400
+Started POST "/trails/" for ::1 at 2020-07-09 14:30:04 -0400
+Processing by TrailsController#create as JSON
+Processing by TrailsController#index as */*
+  Parameters: {"name"=>"Trail 2", "location"=>"Location 2", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200", "trail"=>{"name"=>"Trail 2", "location"=>"Location 2", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Load (3.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 3.6ms | Allocations: 2372)
+
+
+  [1m[36mTrail Create (14.3ms)[0m  [1m[32mINSERT INTO "trails" ("name", "location", "difficulty", "completion_time", "elevation_gain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Trail 2"], ["location", "Location 2"], ["difficulty", 3], ["completion_time", "200"], ["elevation_gain", 200], ["created_at", "2020-07-09 18:30:04.939435"], ["updated_at", "2020-07-09 18:30:04.939435"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 201 Created in 25ms (Views: 4.0ms | ActiveRecord: 16.3ms | Allocations: 4001)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:06 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms | Allocations: 1301)
+
+
+Started GET "/trails/" for ::1 at 2020-07-09 14:30:11 -0400
+Processing by TrailsController#index as HTML
+  [1m[36mTrail Load (2.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.23ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 2.7ms | Allocations: 1299)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:14 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (29.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 35ms (Views: 5.8ms | ActiveRecord: 29.1ms | Allocations: 1301)
+
+
+Started DELETE "/trails/2" for ::1 at 2020-07-09 14:30:15 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"2", "trail"=>{}}
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[36mTrail Destroy (1.1ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 19ms (ActiveRecord: 2.9ms | Allocations: 2902)
+
+
+Started POST "/trails/" for ::1 at 2020-07-09 14:30:22 -0400
+Started GET "/trails" for ::1 at 2020-07-09 14:30:22 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"New Trail 2", "location"=>"Location 2", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200", "trail"=>{"name"=>"New Trail 2", "location"=>"Location 2", "difficulty"=>"3", "completion_time"=>"200", "elevation_gain"=>"200"}}
+  [1m[36mTrail Load (1.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.4ms | Allocations: 1604)
+
+
+  [1m[35m (20.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (2.3ms)[0m  [1m[32mINSERT INTO "trails" ("name", "location", "difficulty", "completion_time", "elevation_gain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "New Trail 2"], ["location", "Location 2"], ["difficulty", 3], ["completion_time", "200"], ["elevation_gain", 200], ["created_at", "2020-07-09 18:30:22.533711"], ["updated_at", "2020-07-09 18:30:22.533711"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 201 Created in 28ms (Views: 0.7ms | ActiveRecord: 23.2ms | Allocations: 4005)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:23 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (13.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 13.9ms | Allocations: 1301)
+
+
+Started GET "/trails/" for ::1 at 2020-07-09 14:30:25 -0400
+Processing by TrailsController#index as HTML
+  [1m[36mTrail Load (1.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 1.5ms | Allocations: 1299)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:31 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 1301)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:39 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.6ms | Allocations: 1301)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:30:40 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (14.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 14.1ms | Allocations: 1301)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:31:39 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.92ms)
+Completed 200 OK in 38ms (Views: 18.0ms | ActiveRecord: 8.7ms | Allocations: 7924)
+
+
+Started GET "/trails/2/comments" for ::1 at 2020-07-09 14:31:44 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"2"}
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.2ms | Allocations: 1309)
+
+
+Started GET "/trails/2/comments" for ::1 at 2020-07-09 14:32:05 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"2"}
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.02ms)
+Completed 200 OK in 73ms (Views: 56.8ms | ActiveRecord: 14.2ms | Allocations: 18558)
+
+
+Started GET "/trails/2/comments" for ::1 at 2020-07-09 14:32:13 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"2"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.82ms)
+Completed 200 OK in 49ms (Views: 37.0ms | ActiveRecord: 10.0ms | Allocations: 15367)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:32:19 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (4.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.05ms)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 4.9ms | Allocations: 5402)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:32:20 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.46ms)
+Completed 200 OK in 54ms (Views: 43.8ms | ActiveRecord: 10.2ms | Allocations: 4404)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:32:21 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (16.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (10.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (15.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.76ms)
+Completed 200 OK in 57ms (Views: 15.0ms | ActiveRecord: 42.0ms | Allocations: 4402)
+
+
+Started GET "/trails" for ::1 at 2020-07-09 14:32:22 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (4.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.12ms)
+Completed 200 OK in 31ms (Views: 16.3ms | ActiveRecord: 14.2ms | Allocations: 4381)
+
+
+Started GET "/trails/2/comments" for ::1 at 2020-07-09 14:32:23 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"2"}
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (14.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.22ms)
+Completed 200 OK in 27ms (Views: 11.7ms | ActiveRecord: 15.3ms | Allocations: 4087)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:32:26 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (15.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.23ms)
+Completed 200 OK in 27ms (Views: 10.1ms | ActiveRecord: 16.2ms | Allocations: 4087)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:35:34 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.96ms)
+Completed 200 OK in 116ms (Views: 90.1ms | ActiveRecord: 14.5ms | Allocations: 19850)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:35:36 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (3.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.8ms)
+Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 7.8ms | Allocations: 4063)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:35:40 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.83ms)
+Completed 200 OK in 30ms (Views: 16.4ms | ActiveRecord: 10.5ms | Allocations: 6111)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:35:46 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (2.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.26ms)
+Completed 200 OK in 49ms (Views: 35.3ms | ActiveRecord: 11.0ms | Allocations: 15275)
+
+
+Started GET "/trails/1" for ::1 at 2020-07-09 14:35:48 -0400
+Processing by TrailsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:13:in `show'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (13.43ms)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 4.3ms | Allocations: 3535)
+
+
+Started GET "/trails/1/comments" for ::1 at 2020-07-09 14:35:54 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"trail_id"=>"1"}
+  [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTrail Load (6.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE Trail Load (0.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.65ms)
+Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 10.1ms | Allocations: 4043)
+
+
+Started GET "/trails/2" for ::1 at 2020-07-09 14:35:57 -0400
+Processing by TrailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms | Allocations: 665)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trail with 'id'=2):
+  
+app/controllers/trails_controller.rb:44:in `set_trail'
+Started GET "/trails" for ::1 at 2020-07-09 14:36:02 -0400
+Processing by TrailsController#index as HTML
+  [1m[36mTrail Load (2.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (7.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.56ms)
+Completed 200 OK in 30ms (Views: 13.8ms | ActiveRecord: 15.5ms | Allocations: 4386)
+
+
+Started GET "/trails/3" for ::1 at 2020-07-09 14:36:05 -0400
+Processing by TrailsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:13:in `show'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (8.8ms)
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 3.6ms | Allocations: 2167)
+
+
+Started GET "/trails/1" for ::1 at 2020-07-09 14:36:08 -0400
+Processing by TrailsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (21.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:13:in `show'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (28.3ms)
+Completed 200 OK in 32ms (Views: 7.9ms | ActiveRecord: 21.8ms | Allocations: 2449)
+
+

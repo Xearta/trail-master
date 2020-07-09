@@ -85,7 +85,7 @@ function displayCreateForm() {
 
 function createTrail() {
     event.preventDefault();
-    let id = (Trail.all[Trail.all.length-1].id)+1       // This isn't working but it is adding a new id correctly
+    let id;
     let name = document.querySelector('#name').value;
     let location =  document.querySelector('#location').value;
     let difficulty = document.querySelector('#difficulty').value;
