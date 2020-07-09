@@ -7,7 +7,9 @@ window.addEventListener('load', () => {
 function getTrails() {
     clearForm();
     const main = document.querySelector('#main');
+    const commentsBox = document.querySelector('#commentsBox ul');
     main.innerHTML = "";
+    commentsBox.innerHTML = "";
     fetch(BASE_URL+"/trails")
     .then(resp => resp.json())
     .then(trails => {
@@ -20,8 +22,9 @@ function getTrails() {
             let difficulty = trail.difficulty;
             let completion_time = trail.completion_time;
             let elevation_gain = trail.elevation_gain;
+            let comments = trail.comments;
 
-            new Trail(id, name, location, difficulty, completion_time, elevation_gain);
+            new Trail(id, name, location, difficulty, completion_time, elevation_gain, comments);
         })
 
         Trail.listTrails();
@@ -49,7 +52,9 @@ function attachClickToLinks() {
 function displayTrail() {
     clearForm();
     const main = document.querySelector("#main");
+    const commentsBox = document.querySelector("#commentsBox ul");
     main.innerHTML = "";
+    commentsBox.innerHTML = "";
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
 
@@ -59,7 +64,17 @@ function displayTrail() {
     <li>Difficulty: ${trail.difficulty}</li>
     <li>Time to Complete: ${trail.completion_time}</li>
     <li>Elevation Gain: ${trail.elevation_gain}</li>
-    `
+
+    <h3>Comments:</h3>`
+
+    console.log(trail.comments);
+    
+    trail.comments.forEach(comment => {
+        commentsBox.innerHTML += `
+        <li>Name: ${comment.name}</li>
+        <li>Comment: ${comment.content}</li><br/>
+        `
+    })
 }
 
 function displayCreateForm() {
