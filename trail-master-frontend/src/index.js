@@ -25,6 +25,14 @@ function getTrails() {
             let completion_time = trail.completion_time;
             let elevation_gain = trail.elevation_gain;
             let comments = trail.comments;
+            let image_url = trail.image_url;
+            
+            
+            if (trail.image_url === null) {
+                image_url = "images/stock_trail.jpeg"
+            }
+
+
             let comments_array = [];
 
             if (comments.length > 0) {     
@@ -39,7 +47,7 @@ function getTrails() {
                 })                 
             }
 
-            new Trail(id, name, location, difficulty, completion_time, elevation_gain, comments_array);
+            new Trail(id, name, location, difficulty, completion_time, elevation_gain, image_url, comments_array);
         })
 
         Trail.listTrails();
@@ -85,7 +93,7 @@ function displayTrail() {
     <div id="trail-view">
         <h2 data-id="${id}">${trail.name}</h2><br/>
         <div id="trail-view-contents">
-            <img src="images/stock_trail.jpeg">
+            <img src="${trail.image_url}">
             <ul>
                 <li id="trail-details"><span id="label">Location:</span> ${trail.location}</li>
                 <li id="trail-details"><span id="label">Difficulty:</span> ${trail.difficulty}/5</li>

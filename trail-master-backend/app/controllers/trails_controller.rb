@@ -46,6 +46,6 @@ class TrailsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trail_params
-      params.require(:trail).permit(:name, :location, :difficulty, :completion_time, :elevation_gain)
+      params.require(:trail).permit(:name, :location, :difficulty, :completion_time, :elevation_gain, :image_url)
     end
 end
