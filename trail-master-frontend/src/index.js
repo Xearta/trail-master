@@ -99,7 +99,7 @@ function displayTrail() {
             <ul>
                 <li id="trail-details"><span id="label">Start Location:</span> ${trail.start_location}</li>
                 <li id="trail-details"><span id="label">End Location:</span> ${trail.end_location}</li>
-                <li id="trail-details"><span id="label">Distance:</span> ${trail.distance}</li>
+                <li id="trail-details"><span id="label">Distance:</span> ${trail.distance} miles</li>
                 <li id="trail-details"><span id="label">Difficulty:</span> ${trail.difficulty}/5</li>
                 <li id="trail-details"><span id="label">Time to Complete:</span> ${trail.completion_time} hrs</li>
                 <li id="trail-details"><span id="label">Elevation Gain: +</span>${trail.elevation_gain} ft</li>
@@ -193,7 +193,6 @@ function createTrail() {
 
     let trail = new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url);
 
-    console.log(trail);
 
     fetch(BASE_URL+'/trails/', {
         method: 'POST',
@@ -204,10 +203,7 @@ function createTrail() {
         }
     })
     .then(resp => resp.json())
-    .then(data => {
-        console.log(data);
-        getTrails();
-    })
+    .then(data => getTrails());
 }
 
 
@@ -228,18 +224,25 @@ function editTrail() {
         <form data-id="${id}">
             <label>Trail Name:</label>
             <input type="text" id="name" value="${trail.name}"><br/>
-            <label>Location:</label>
-            <input type="text" id="location" value="${trail.location}"><br/>
-            <label>Difficulty:</label>
-            <input type="text" id="difficulty" value="${trail.difficulty}"><br/>
-            <label>Time To Complete:</label>
-            <input type="text" id="completion_time" value="${trail.completion_time}"><br/>
-            <label>Elevation Gain:</label>
-            <input type="text" id="elevation_gain" value="${trail.elevation_gain}"><br/>
-            <input type="submit">
+            <label>Start Location:</label>
+            <input type="text" id="start_location" value="${trail.start_location}"><br/>
+            <label>End Location:</label>
+            <input type="text" id="end_location" value="${trail.end_location}"><br/>
+            <label>Distance: [Miles]</label>
+            <input type="number" id="distance" value="${trail.distance}"><br/>
+            <label>Difficulty: [1-5]</label>
+            <input type="number" id="difficulty" value="${trail.difficulty}"><br/>
+            <label>Time To Complete: [Hours]</label>
+            <input type="number" id="completion_time" value="${trail.completion_time}"><br/>
+            <label>Elevation Gain: [Feet]</label>
+            <input type="number" id="elevation_gain" value="${trail.elevation_gain}"><br/>
+            <label>Trail Image URL</label>
+            <input tye="url" id="image_url" value="${trail.image_url}"><br/>
+            <input type="submit" value="Update Trail">
         </form>
         <span class="modal-close">X</span>
         `
+
         trailFormDiv.innerHTML = form;
         document.querySelector('form').addEventListener('submit', updateTrail);
         const modalClose = document.querySelector('.modal-close');
@@ -249,22 +252,29 @@ function editTrail() {
 }
 
 
-/* * * * * * * * *  * 
-* Trail Edit Action *
-* * * * * * * * * * */
+/* * * * * * * * * *  *
+* Trail Update Action *
+* * * * * * * * * * * */
 function updateTrail() {
     event.preventDefault();
     let id = event.target.dataset.id;
+    const trail = Trail.all.find(trail => trail.id == id);
     const modalBg = document.querySelector('.modal-bg');
     modalBg.classList.remove('active');
 
-    const trail = {
-        name: document.querySelector('#name').value,
-        location: document.querySelector('#location').value,
-        difficulty: document.querySelector('#difficulty').value,
-        completion_time: document.querySelector('#completion_time').value,
-        elevation_gain: document.querySelector('#elevation_gain').value
+    trail.name = document.querySelector('#name').value;
+    trail.start_location =  document.querySelector('#start_location').value;
+    trail.end_location = document.querySelector("#end_location").value;
+    trail.distance = document.querySelector("#distance").value;
+    trail.difficulty = document.querySelector('#difficulty').value;
+    trail.completion_time = document.querySelector('#completion_time').value;
+    trail.elevation_gain = document.querySelector('#elevation_gain').value;
+    trail.image_url = document.querySelector("#image_url").value;
+
+    if (image_url === null || image_url === "") {
+        image_url = "images/stock_trail.jpeg"
     }
+
 
     fetch(BASE_URL+'/trails/'+id, {
         method: "PATCH",
@@ -274,7 +284,8 @@ function updateTrail() {
             'Accept': 'application/json'
         }
     })
-    .then(getTrails());
+    .then(resp => resp.json())
+    .then(data => getTrails());
 
 }
 

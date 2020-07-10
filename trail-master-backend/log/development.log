@@ -39047,3 +39047,1322 @@ Processing by TrailsController#index as */*
 Completed 200 OK in 157ms (Views: 99.7ms | ActiveRecord: 56.8ms | Allocations: 24528)
 
 
+Started POST "/trails/" for ::1 at 2020-07-10 12:39:01 -0400
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"Newest Trail", "start_location"=>"Starting Location", "end_location"=>"Ending Location", "distance"=>"200", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"200", "image_url"=>"https://www.google.com", "trail"=>{"name"=>"Newest Trail", "start_location"=>"Starting Location", "end_location"=>"Ending Location", "distance"=>"200", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"200", "image_url"=>"https://www.google.com"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (0.5ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Newest Trail"], ["start_location", "Starting Location"], ["end_location", "Ending Location"], ["distance", 200], ["difficulty", 4], ["completion_time", 200], ["elevation_gain", 200], ["image_url", "https://www.google.com"], ["created_at", "2020-07-10 16:39:01.864730"], ["updated_at", "2020-07-10 16:39:01.864730"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 16]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:21:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (6.75ms)
+Completed 201 Created in 15ms (Views: 7.4ms | ActiveRecord: 2.0ms | Allocations: 4188)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:39:01 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (8.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (12.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 16]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (85.0ms)
+Completed 200 OK in 97ms (Views: 52.4ms | ActiveRecord: 44.7ms | Allocations: 26073)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:39:07 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 16]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (90.05ms)
+Completed 200 OK in 94ms (Views: 70.6ms | ActiveRecord: 23.2ms | Allocations: 26072)
+
+
+Started DELETE "/trails/16" for ::1 at 2020-07-10 12:39:10 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:10 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"16", "trail"=>{}}
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[36mTrail Destroy (3.4ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 17ms (ActiveRecord: 9.8ms | Allocations: 2592)
+
+
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.09ms)
+Completed 200 OK in 49ms (Views: 38.5ms | ActiveRecord: 10.3ms | Allocations: 24626)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:39:12 -0400
+Started DELETE "/trails/15" for ::1 at 2020-07-10 12:39:12 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"15", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (4.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (3.4ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 24ms (ActiveRecord: 16.4ms | Allocations: 7076)
+
+
+[active_model_serializers]   [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (92.98ms)
+Completed 200 OK in 100ms (Views: 64.5ms | ActiveRecord: 33.0ms | Allocations: 27122)
+
+
+Started DELETE "/trails/14" for ::1 at 2020-07-10 12:39:14 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:14 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"14", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  [1m[36mTrail Load (3.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (17.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (3.0ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 36ms (ActiveRecord: 28.0ms | Allocations: 7041)
+
+
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (6.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (70.82ms)
+Completed 200 OK in 94ms (Views: 72.8ms | ActiveRecord: 20.7ms | Allocations: 25439)
+
+
+Started DELETE "/trails/13" for ::1 at 2020-07-10 12:39:15 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:15 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"13", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (6.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[36mTrail Load (5.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (7.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (5.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+  [1m[36mTrail Destroy (1.0ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 30ms (ActiveRecord: 19.8ms | Allocations: 7000)
+
+
+[active_model_serializers]   [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (9.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (6.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (88.31ms)
+Completed 200 OK in 100ms (Views: 50.5ms | ActiveRecord: 49.2ms | Allocations: 23893)
+
+
+Started DELETE "/trails/10" for ::1 at 2020-07-10 12:39:17 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:17 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"10", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (4.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (5.7ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 32ms (ActiveRecord: 18.0ms | Allocations: 9343)
+
+
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (76.91ms)
+Completed 200 OK in 83ms (Views: 60.2ms | ActiveRecord: 22.5ms | Allocations: 22366)
+
+
+Started DELETE "/trails/8" for ::1 at 2020-07-10 12:39:18 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:18 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"8", "trail"=>{}}
+  [1m[36mTrail Load (3.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[36mTrail Load (7.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (1.8ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 28ms (ActiveRecord: 15.8ms | Allocations: 6578)
+
+
+[active_model_serializers]   [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (20.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (82.29ms)
+Completed 200 OK in 95ms (Views: 46.8ms | ActiveRecord: 48.3ms | Allocations: 20925)
+
+
+Started DELETE "/trails/11" for ::1 at 2020-07-10 12:39:20 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:20 -0400
+Processing by TrailsController#destroy as JSON
+Processing by TrailsController#index as */*
+  Parameters: {"id"=>"11", "trail"=>{}}
+  [1m[36mTrail Load (3.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTrail Load (4.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (3.1ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 11]]
+[active_model_serializers]   [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 27ms (ActiveRecord: 13.5ms | Allocations: 7804)
+
+
+[active_model_serializers]   [1m[36mComment Load (5.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.16ms)
+Completed 200 OK in 59ms (Views: 37.6ms | ActiveRecord: 21.1ms | Allocations: 19375)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:39:21 -0400
+Started DELETE "/trails/12" for ::1 at 2020-07-10 12:39:21 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#destroy as JSON
+  [1m[36mTrail Load (1.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  Parameters: {"id"=>"12", "trail"=>{}}
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Load (3.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+  [1m[36mTrail Destroy (0.8ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 34ms (ActiveRecord: 12.0ms | Allocations: 7081)
+
+
+[active_model_serializers]   [1m[36mComment Load (13.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (61.66ms)
+Completed 200 OK in 68ms (Views: 40.6ms | ActiveRecord: 26.6ms | Allocations: 18175)
+
+
+Started DELETE "/trails/7" for ::1 at 2020-07-10 12:39:23 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:23 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"7", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Load (6.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+[active_model_serializers]   [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (0.9ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 22ms (ActiveRecord: 14.1ms | Allocations: 7875)
+
+
+[active_model_serializers]   [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.01ms)
+Completed 200 OK in 43ms (Views: 25.8ms | ActiveRecord: 17.0ms | Allocations: 15935)
+
+
+Started DELETE "/trails/7" for ::1 at 2020-07-10 12:39:25 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:25 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"7", "trail"=>{}}
+  [1m[36mTrail Load (3.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+Completed 404 Not Found in 5ms (ActiveRecord: 3.3ms | Allocations: 660)
+
+
+  [1m[36mTrail Load (8.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  
+ActiveRecord::RecordNotFound (Couldn't find Trail with 'id'=7):
+  
+app/controllers/trails_controller.rb:44:in `set_trail'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (13.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (23.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (83.26ms)
+Completed 200 OK in 122ms (Views: 67.3ms | ActiveRecord: 54.0ms | Allocations: 41048)
+
+
+Started DELETE "/trails/9" for ::1 at 2020-07-10 12:39:26 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:26 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#destroy as JSON
+  [1m[36mTrail Load (2.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  Parameters: {"id"=>"9", "trail"=>{}}
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Load (2.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (2.7ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 18ms (ActiveRecord: 11.7ms | Allocations: 6984)
+
+
+[active_model_serializers]   [1m[36mComment Load (3.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (36.47ms)
+Completed 200 OK in 43ms (Views: 27.5ms | ActiveRecord: 15.2ms | Allocations: 14802)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:39:29 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (36.27ms)
+Completed 200 OK in 41ms (Views: 25.1ms | ActiveRecord: 15.2ms | Allocations: 10280)
+
+
+Started DELETE "/trails/6" for ::1 at 2020-07-10 12:39:31 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"6", "trail"=>{}}
+Started GET "/trails" for ::1 at 2020-07-10 12:39:31 -0400
+  [1m[36mTrail Load (8.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+Processing by TrailsController#index as */*
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[36mTrail Load (1.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  [1m[36mTrail Destroy (0.6ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 30ms (ActiveRecord: 23.7ms | Allocations: 5751)
+
+
+[active_model_serializers]   [1m[36mComment Load (13.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (49.81ms)
+Completed 200 OK in 55ms (Views: 23.5ms | ActiveRecord: 31.4ms | Allocations: 12260)
+
+
+Started DELETE "/trails/6" for ::1 at 2020-07-10 12:39:33 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:39:33 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"6", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+Completed 404 Not Found in 5ms (ActiveRecord: 2.2ms | Allocations: 1065)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trail with 'id'=6):
+  
+app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[36mTrail Load (44.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (14.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.62ms)
+Completed 200 OK in 87ms (Views: 18.4ms | ActiveRecord: 68.2ms | Allocations: 37555)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:40:16 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.56ms)
+Completed 200 OK in 26ms (Views: 18.6ms | ActiveRecord: 7.4ms | Allocations: 8750)
+
+
+Started POST "/trails/" for ::1 at 2020-07-10 12:40:41 -0400
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"", "start_location"=>"", "end_location"=>"", "distance"=>"", "difficulty"=>"", "completion_time"=>"", "elevation_gain"=>"", "image_url"=>"images/stock_trail.jpeg", "trail"=>{"name"=>"", "start_location"=>"", "end_location"=>"", "distance"=>"", "difficulty"=>"", "completion_time"=>"", "elevation_gain"=>"", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (0.5ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["start_location", ""], ["end_location", ""], ["image_url", "images/stock_trail.jpeg"], ["created_at", "2020-07-10 16:40:41.720424"], ["updated_at", "2020-07-10 16:40:41.720424"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 17]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:21:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (3.05ms)
+Completed 201 Created in 12ms (Views: 3.8ms | ActiveRecord: 4.6ms | Allocations: 4145)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:40:41 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 17]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.46ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 5.1ms | Allocations: 10294)
+
+
+Started DELETE "/trails/17" for ::1 at 2020-07-10 12:40:46 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:40:46 -0400
+Processing by TrailsController#index as */*
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"17", "trail"=>{}}
+  [1m[36mTrail Load (1.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (11.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (4.4ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+Completed 204 No Content in 35ms (ActiveRecord: 8.0ms | Allocations: 9015)
+
+
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 17]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.59ms)
+Completed 200 OK in 44ms (Views: 25.9ms | ActiveRecord: 17.7ms | Allocations: 12982)
+
+
+Started DELETE "/trails/17" for ::1 at 2020-07-10 12:40:50 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:40:50 -0400
+Processing by TrailsController#destroy as JSON
+Processing by TrailsController#index as */*
+  Parameters: {"id"=>"17", "trail"=>{}}
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Load (0.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.5ms | Allocations: 1855)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trail with 'id'=17):
+  
+app/controllers/trails_controller.rb:44:in `set_trail'
+[active_model_serializers]   [1m[36mComment Load (27.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (24.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (36.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (13.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (19.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (155.21ms)
+Completed 200 OK in 161ms (Views: 37.8ms | ActiveRecord: 122.8ms | Allocations: 37652)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:41:16 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (18.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.85ms)
+Completed 200 OK in 45ms (Views: 17.4ms | ActiveRecord: 27.1ms | Allocations: 8750)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:41:17 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (6.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (9.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.24ms)
+Completed 200 OK in 59ms (Views: 34.3ms | ActiveRecord: 24.2ms | Allocations: 8753)
+
+
+Started DELETE "/trails/1" for ::1 at 2020-07-10 12:41:23 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"1", "trail"=>{}}
+  [1m[36mTrail Load (3.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[36mTrail Destroy (1.6ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 5.8ms | Allocations: 2456)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:41:26 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (4.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (10.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (9.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.16ms)
+Completed 200 OK in 48ms (Views: 13.9ms | ActiveRecord: 34.0ms | Allocations: 7213)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:42:21 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.28ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.4ms | Allocations: 7213)
+
+
+Started DELETE "/trails/5" for ::1 at 2020-07-10 12:42:23 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:42:23 -0400
+Processing by TrailsController#destroy as JSON
+Processing by TrailsController#index as */*
+  Parameters: {"id"=>"5", "trail"=>{}}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTrail Load (1.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (2.5ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 7.6ms | Allocations: 6070)
+
+
+[active_model_serializers]   [1m[36mComment Load (14.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.23ms)
+Completed 200 OK in 36ms (Views: 17.2ms | ActiveRecord: 18.9ms | Allocations: 9883)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:42:26 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (10.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (13.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (7.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.9ms)
+Completed 200 OK in 45ms (Views: 11.2ms | ActiveRecord: 34.0ms | Allocations: 5658)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:44:50 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.98ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.9ms | Allocations: 5658)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:45:43 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.35ms)
+Completed 200 OK in 46ms (Views: 28.2ms | ActiveRecord: 17.5ms | Allocations: 5661)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:45:53 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.08ms)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 8.1ms | Allocations: 5658)
+
+
+Started POST "/trails/" for ::1 at 2020-07-10 12:46:08 -0400
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"Newest Trail", "start_location"=>"Some starting location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"100", "image_url"=>"images/stock_trail.jpeg", "trail"=>{"name"=>"Newest Trail", "start_location"=>"Some starting location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"100", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[35m (7.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (10.7ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Newest Trail"], ["start_location", "Some starting location"], ["end_location", "Some ending location"], ["distance", 500], ["difficulty", 4], ["completion_time", 200], ["elevation_gain", 100], ["image_url", "images/stock_trail.jpeg"], ["created_at", "2020-07-10 16:46:08.467824"], ["updated_at", "2020-07-10 16:46:08.467824"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:21:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (2.45ms)
+Completed 201 Created in 31ms (Views: 2.9ms | ActiveRecord: 21.0ms | Allocations: 4188)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:46:08 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.97ms)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 4.3ms | Allocations: 7203)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:47:22 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (6.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.44ms)
+Completed 200 OK in 25ms (Views: 15.1ms | ActiveRecord: 10.0ms | Allocations: 7203)
+
+
+Started POST "/trails/" for ::1 at 2020-07-10 12:47:25 -0400
+Processing by TrailsController#create as JSON
+  Parameters: {"name"=>"", "start_location"=>"", "end_location"=>"", "distance"=>"", "difficulty"=>"", "completion_time"=>"", "elevation_gain"=>"", "image_url"=>"images/stock_trail.jpeg", "trail"=>{"name"=>"", "start_location"=>"", "end_location"=>"", "distance"=>"", "difficulty"=>"", "completion_time"=>"", "elevation_gain"=>"", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[36mTrail Create (6.0ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["start_location", ""], ["end_location", ""], ["image_url", "images/stock_trail.jpeg"], ["created_at", "2020-07-10 16:47:25.862989"], ["updated_at", "2020-07-10 16:47:25.862989"]]
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:20:in `create'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 19]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:21:in `create'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (2.9ms)
+Completed 201 Created in 19ms (Views: 2.6ms | ActiveRecord: 9.3ms | Allocations: 4143)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:47:25 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.0ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (7.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 19]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.3ms)
+Completed 200 OK in 33ms (Views: 17.1ms | ActiveRecord: 15.5ms | Allocations: 8747)
+
+
+Started DELETE "/trails/19" for ::1 at 2020-07-10 12:47:27 -0400
+Started GET "/trails" for ::1 at 2020-07-10 12:47:27 -0400
+Processing by TrailsController#destroy as JSON
+  Parameters: {"id"=>"19", "trail"=>{}}
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (15.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (6.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[36mTrail Destroy (10.5ms)[0m  [1m[31mDELETE FROM "trails" WHERE "trails"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:38:in `destroy'
+Completed 204 No Content in 43ms (ActiveRecord: 32.6ms | Allocations: 8052)
+
+
+[active_model_serializers]   [1m[36mComment Load (9.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 19]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.46ms)
+Completed 200 OK in 41ms (Views: 21.7ms | ActiveRecord: 19.2ms | Allocations: 11344)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:47:29 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.18ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 1.5ms | Allocations: 7206)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:51:13 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (3.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.97ms)
+Completed 200 OK in 21ms (Views: 13.5ms | ActiveRecord: 6.4ms | Allocations: 7206)
+
+
+Started PATCH "/trails/18" for ::1 at 2020-07-10 12:51:21 -0400
+Processing by TrailsController#update as JSON
+  Parameters: {"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"100", "image_url"=>"images/stock_trail.jpeg", "comments"=>[], "trail"=>{"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"200", "elevation_gain"=>"100", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[36mTrail Load (27.2ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (12.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+  [1m[36mTrail Update (16.8ms)[0m  [1m[33mUPDATE "trails" SET "start_location" = $1, "updated_at" = $2 WHERE "trails"."id" = $3[0m  [["start_location", "New Location"], ["updated_at", "2020-07-10 16:51:21.578488"], ["id", 18]]
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+  [1m[35m (21.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mComment Load (15.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:30:in `update'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (17.73ms)
+Completed 200 OK in 103ms (Views: 3.2ms | ActiveRecord: 92.5ms | Allocations: 4803)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:51:21 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.5ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (12.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (26.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.31ms)
+Completed 200 OK in 62ms (Views: 18.2ms | ActiveRecord: 43.7ms | Allocations: 7203)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:51:25 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (1.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (4.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.19ms)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 10.6ms | Allocations: 7203)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:51:28 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (2.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.89ms)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 7.3ms | Allocations: 7203)
+
+
+Started PATCH "/trails/18" for ::1 at 2020-07-10 12:51:37 -0400
+Processing by TrailsController#update as JSON
+  Parameters: {"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"100", "elevation_gain"=>"123", "image_url"=>"images/stock_trail.jpeg", "comments"=>[], "trail"=>{"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"100", "elevation_gain"=>"123", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[36mTrail Load (1.6ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+  [1m[36mTrail Update (0.8ms)[0m  [1m[33mUPDATE "trails" SET "completion_time" = $1, "elevation_gain" = $2, "updated_at" = $3 WHERE "trails"."id" = $4[0m  [["completion_time", 100], ["elevation_gain", 123], ["updated_at", "2020-07-10 16:51:37.547015"], ["id", 18]]
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/trails_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:30:in `update'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (4.32ms)
+Completed 200 OK in 21ms (Views: 3.8ms | ActiveRecord: 10.0ms | Allocations: 4763)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:51:37 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (5.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (3.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.23ms)
+Completed 200 OK in 42ms (Views: 29.3ms | ActiveRecord: 11.9ms | Allocations: 7206)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:52:16 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.4ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.21ms)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 3.7ms | Allocations: 7203)
+
+
+Started PATCH "/trails/18" for ::1 at 2020-07-10 12:52:20 -0400
+Processing by TrailsController#update as JSON
+  Parameters: {"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"100", "elevation_gain"=>"123", "image_url"=>"images/stock_trail.jpeg", "comments"=>[], "trail"=>{"id"=>"18", "name"=>"Newest Trail", "start_location"=>"New Location", "end_location"=>"Some ending location", "distance"=>"500", "difficulty"=>"4", "completion_time"=>"100", "elevation_gain"=>"123", "image_url"=>"images/stock_trail.jpeg"}}
+  [1m[36mTrail Load (0.3ms)[0m  [1m[34mSELECT "trails".* FROM "trails" WHERE "trails"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/trails_controller.rb:44:in `set_trail'
+[31mUnpermitted parameter: :id[0m
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:30:in `update'
+[active_model_serializers] Rendered TrailSerializer with ActiveModelSerializers::Adapter::Attributes (2.86ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 2603)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:52:20 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (3.8ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.82ms)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 5.1ms | Allocations: 7203)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:52:31 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.9ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.13ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 4.1ms | Allocations: 7203)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrail Create (0.8ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Test Trail"], ["start_location", "Location 1"], ["end_location", "End Location"], ["distance", 245], ["difficulty", 3], ["completion_time", 200], ["elevation_gain", 200], ["created_at", "2020-07-10 16:52:49.834166"], ["updated_at", "2020-07-10 16:52:49.834166"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrail Create (0.4ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Trail 2"], ["start_location", "Location 2"], ["end_location", "End Location"], ["distance", 245], ["difficulty", 3], ["completion_time", 200], ["elevation_gain", 200], ["image_url", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.rootsrated.com%2Fimage%2Fupload%2Fs--N3bqAZuL--%2Ft_rr_large_natural%2Fs2otome5vkepsjqoazoi.jpg&f=1&nofb=1"], ["created_at", "2020-07-10 16:52:49.841349"], ["updated_at", "2020-07-10 16:52:49.841349"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrail Create (0.3ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Quandary Peak Trail"], ["start_location", "Colorado, USA"], ["end_location", "End Location"], ["distance", 245], ["difficulty", 3], ["completion_time", 200], ["elevation_gain", 200], ["image_url", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-assets.alltrails.com%2Fuploads%2Fphoto%2Fimage%2F21351516%2Fextra_large_fd454c40ba71b87be16f73301228ae47.jpg&f=1&nofb=1"], ["created_at", "2020-07-10 16:52:49.851806"], ["updated_at", "2020-07-10 16:52:49.851806"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrail Create (1.2ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Highline Trail"], ["start_location", "Montana, USA"], ["end_location", "End Location"], ["distance", 245], ["difficulty", 3], ["completion_time", 200], ["elevation_gain", 200], ["image_url", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-assets.alltrails.com%2Fuploads%2Fphoto%2Fimage%2F21284590%2Fextra_large_28669228a55eced52ca8b46b976fc3ec.jpg&f=1&nofb=1"], ["created_at", "2020-07-10 16:52:49.855475"], ["updated_at", "2020-07-10 16:52:49.855475"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrail Create (0.5ms)[0m  [1m[32mINSERT INTO "trails" ("name", "start_location", "end_location", "distance", "difficulty", "completion_time", "elevation_gain", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Lake Lansing North Trail"], ["start_location", "Michigan, USA"], ["end_location", "End Location"], ["distance", 245], ["difficulty", 3], ["completion_time", 200], ["elevation_gain", 200], ["image_url", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-assets.alltrails.com%2Fuploads%2Fphoto%2Fimage%2F11261743%2Fextra_large_e2f0def83d996ee6321bde1008ef2fbc.jpg&f=1&nofb=1"], ["created_at", "2020-07-10 16:52:49.860427"], ["updated_at", "2020-07-10 16:52:49.860427"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/trails" for ::1 at 2020-07-10 12:52:59 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (0.7ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 20]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 21]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 22]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 23]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 24]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (83.39ms)
+Completed 200 OK in 129ms (Views: 104.3ms | ActiveRecord: 19.5ms | Allocations: 29480)
+
+
+Started GET "/trails" for ::1 at 2020-07-10 12:52:59 -0400
+Processing by TrailsController#index as */*
+  [1m[36mTrail Load (3.1ms)[0m  [1m[34mSELECT "trails".* FROM "trails"[0m
+  ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (9.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (6.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 20]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 21]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 22]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 23]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."trail_id" = $1[0m  [["trail_id", 24]]
+[active_model_serializers]   ↳ app/controllers/trails_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.73ms)
+Completed 200 OK in 54ms (Views: 24.4ms | ActiveRecord: 29.0ms | Allocations: 14952)
+
+
