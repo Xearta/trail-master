@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 2020_07_09_220402) do
 
   create_table "trails", force: :cascade do |t|
     t.string "name"
-    t.string "location"
+    t.string "start_location"
+    t.string "end_location"
+    t.integer "distance"
     t.integer "difficulty"
-    t.string "completion_time"
+    t.integer "completion_time"
     t.integer "elevation_gain"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false

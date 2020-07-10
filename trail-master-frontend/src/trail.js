@@ -4,10 +4,12 @@
 class Trail {
     static all = [];
     
-    constructor(id, name, location, difficulty, completion_time, elevation_gain, image_url, comments) {
+    constructor(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, comments) {
         this.id = id;
         this.name = name;
-        this.location = location;
+        this.start_location = start_location;
+        this.end_location = end_location;
+        this.distance = distance;
         this.difficulty = difficulty;
         this.completion_time = completion_time;
         this.elevation_gain = elevation_gain;
@@ -18,14 +20,13 @@ class Trail {
 
 
     render() {
-        // Add Image
         return `
             <div class="card">
                 <div class="inner">
                     <img src="${this.image_url}" alt="trail">
                     <div class="overlay">
                         <h4>${this.name}</h4>
-                        <span class="location">${this.location}</span>
+                        <span class="location">${this.start_location}</span>
                         <span data-id="${this.id}" class="trail-button">Learn More</span>
                     </div>
                 </div>
