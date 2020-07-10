@@ -15,7 +15,7 @@ class Comment {
         <li>
         <span id="comment-name">${this.name} says: </span><br/>
         <span id="comment-content">${this.content}</span><br/>
-        <span id="comment-date">Created At: ${this.created_at}</span><br/>
+        <span id="comment-date">${new Date(this.created_at).toDateString()}</span><br/>
         <button id="delete-comment" data-id="${this.id}">Delete</button></li>
         </li><br/>
         `

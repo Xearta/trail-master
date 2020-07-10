@@ -415,6 +415,10 @@ header .navbar ul li a.active::before {
     text-align: center;
     max-height: 500px;
     overflow-y: auto;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #838383;
+    box-shadow: 2px 3px #888888;
 }
 
 .main #trail-view-contents #commentsContainer ul {
@@ -424,6 +428,7 @@ header .navbar ul li a.active::before {
 .main #trail-view-contents #commentsContainer ul li {
     padding-bottom: 32px;
     border-bottom: 1px solid rgba(131, 131, 131, 0.5);
+    margin: 0px 10px;
 }
 
 .main #trail-view-contents #commentsContainer ul li button {
@@ -436,7 +441,7 @@ header .navbar ul li a.active::before {
     line-height: 1.2em;
     color: rgba(0, 0, 0, 0.8);
     left: 0px;
-    top: 0px;
+    top: 2px;
 }
 
 .main #trail-view-contents #commentsContainer ul li #comment-date {
