@@ -52,9 +52,7 @@ function getTrails() {
 * * * * * * * * * */
 function clearForm() {
     const trailFormDiv = document.querySelector(".modal");
-    const CommentFormDiv = document.querySelector("#comments-form");
     trailFormDiv.innerHTML = "";
-    CommentFormDiv.innerHTML = "";
 }
 
 
@@ -99,7 +97,8 @@ function displayTrail() {
                     <ul>
                     </ul>
                 </div>
-                <button id="addComment">Add A Comment</button>
+                <div id="new-comments-form">
+                </div>
             </ul>
         </div>
         <button id="update" data-id="${trail.id}">Edit</button>
@@ -108,11 +107,13 @@ function displayTrail() {
     const commentsUl = document.querySelector('#commentsContainer ul');
     trail.comments.forEach(comment => commentsUl.innerHTML += comment.render())
     
-    document.querySelector("#addComment").addEventListener('click', displayCommentForm);
     document.querySelectorAll('#delete-comment').forEach(btn => btn.addEventListener('click', removeComment));
     document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail));
     document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));   
+    displayCommentForm();
 }
+
+
 
 
 /* * * * * * * * *  *
@@ -269,13 +270,13 @@ function removeTrail() {
 * Add Comments Form *
 * * * * * * * * * * */
 function displayCommentForm() {
-    const commentsFormDiv = document.querySelector("#comments-form");
+    const commentsFormDiv = document.querySelector("#new-comments-form");
     let form = `
             <form>
                 <label>Name: </label>
-                <input type="text" id="commenter-name">
+                <input type="text" id="commenter-name"><br/>
                 <label>Comment Text: </label>
-                <input type="text" id="comment-text">
+                <textarea id="comment-text" rows="4" cols="50"></textarea><br/>
                 <input type="submit">
             </form>            
             `
@@ -293,8 +294,9 @@ function createComment() {
     let name = document.querySelector('#commenter-name').value;
     let content = document.querySelector('#comment-text').value;
     let trail_id = document.querySelector('#main h2').dataset.id;
+    let created_at = new Date();
 
-    let comment = new Comment(id, name, content, trail_id);
+    let comment = new Comment(id, name, content, trail_id, created_at);
 
     fetch(BASE_URL+'/comments', {
         method: 'POST',
@@ -306,7 +308,7 @@ function createComment() {
     })
     .then(resp => resp.json())
     .then(newComment => {
-        clearForm();
+        displayCommentForm();
         const commentsUl = document.querySelector('#commentsContainer ul');
         commentsUl.innerHTML += comment.render();
     })    

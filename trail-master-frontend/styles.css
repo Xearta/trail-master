@@ -354,6 +354,7 @@ header .navbar ul li a.active::before {
 
 .main #trail-view #trail-view-contents {
     display: flex;
+    padding-bottom: 20px;
 }
 
 .main #trail-view-contents img {
@@ -366,6 +367,15 @@ header .navbar ul li a.active::before {
     position: relative;
 }
 
+.main #update {
+    position: absolute;
+    top: 1270px;
+}
+
+.main #delete {
+    position: absolute;
+    top: 1302px;
+}
 
 
 
@@ -455,9 +465,13 @@ header .navbar ul li a.active::before {
 
 
 /* COMMENTS FORM */
-.main #trail-view-contents #addComment {
+.main #trail-view-contents #new-comments-form input[type="submit"] {
     position: absolute;
     right: 0px;
+}
+
+.main #trail-view-contents #new-comments-form input[type="text"] {
+    width: 100%;
 }
 
 
