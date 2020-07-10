@@ -100,6 +100,9 @@ function displayTrail() {
     main.innerHTML += `
     <div id="trail-view">
         <h2 data-id="${id}">${trail.name}</h2><br/>
+        <button id="trail-complete" data-id="${trail.id}">${trail.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
+        <button id="update" data-id="${trail.id}">Edit Trail</button>
+        <button id="delete" data-id="${trail.id}">Delete Trail</button>
         <div id="trail-view-contents">
             <img src="${trail.image_url}">
             <ul>
@@ -120,15 +123,14 @@ function displayTrail() {
                 </div>
             </ul>
         </div>
-        <button id="update" data-id="${trail.id}">Edit Trail</button>
-        <button id="delete" data-id="${trail.id}">Delete Trail</button>
     </div>`
     const commentsUl = document.querySelector('#commentsContainer ul');
     trail.comments.forEach(comment => commentsUl.innerHTML += comment.render())
     
     document.querySelectorAll('#delete-comment').forEach(btn => btn.addEventListener('click', removeComment));
     document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail));
-    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));   
+    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));
+    document.querySelectorAll('#trail-complete').forEach(trail => trail.addEventListener('click', updateTrailCompletion));
     displayCommentForm();
 }
 
@@ -191,13 +193,15 @@ function createTrail() {
     let completion_time = document.querySelector('#completion_time').value;
     let elevation_gain = document.querySelector('#elevation_gain').value;
     let image_url = document.querySelector("#image_url").value;
+    let completed = false;
+
 
     if (image_url === null || image_url === "") {
         image_url = "images/stock_trail.jpeg"
     }
 
 
-    let trail = new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url);
+    let trail = new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed);
 
 
     fetch(BASE_URL+'/trails/', {
@@ -292,8 +296,40 @@ function updateTrail() {
     })
     .then(resp => resp.json())
     .then(data => getTrails());
-
 }
+
+
+
+
+/* * * * * * * * * * * * * * * * *
+* Trail Update Completion Action *
+* * * * * * * * * * * * * * * *  */
+function updateTrailCompletion() {
+    event.preventDefault();
+    let id = event.target.dataset.id;
+    const trail = Trail.all.find(trail => trail.id == id);
+    let complete_btn = document.querySelector('#trail-complete').firstChild;
+
+    trail.completed = !trail.completed;
+
+    fetch(BASE_URL+'/trails/'+id, {
+        method: "PATCH",
+        body: JSON.stringify(trail),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(data => {
+        trail.completed ? complete_btn.data = "Mark Incomplete" : complete_btn.data = "Mark Complete";
+    });
+
+
+    console.log(complete_btn);
+}
+
+
 
 /* * * * * * * * * *  * 
 * Trail Delete Action *
