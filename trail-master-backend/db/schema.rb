@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_220402) do
     t.integer "completion_time"
     t.integer "elevation_gain"
     t.string "image_url"
+    t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

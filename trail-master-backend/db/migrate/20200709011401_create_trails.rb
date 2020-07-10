@@ -9,6 +9,7 @@ class CreateTrails < ActiveRecord::Migration[6.0]
       t.integer :completion_time
       t.integer :elevation_gain
       t.string :image_url
+      t.boolean :completed
 
       t.timestamps
     end

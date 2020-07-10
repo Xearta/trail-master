@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
 * * * * * * * * */
 function getTrails() {
     clearForm();
+    addFilterButtons();
     const main = document.querySelector('#main');
     main.innerHTML = "";
     fetch(BASE_URL+"/trails")
@@ -28,6 +29,7 @@ function getTrails() {
             let elevation_gain = trail.elevation_gain;
             let comments = trail.comments;
             let image_url = trail.image_url;
+            let completed = trail.completed;
             
             
             if (trail.image_url === null) {
@@ -49,11 +51,13 @@ function getTrails() {
                 })                 
             }
 
-            new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, comments_array);
+            new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed, comments_array);
         })
 
         Trail.listTrails();
         attachClickToLinks();
+        mixer.forceRefresh();
+        mixer.forceRender();
     })
 }
 
@@ -62,7 +66,9 @@ function getTrails() {
 * * * * * * * * * */
 function clearForm() {
     const trailFormDiv = document.querySelector(".modal");
+    const filterDiv = document.querySelector(".filter-buttons");
     trailFormDiv.innerHTML = "";
+    filterDiv.innerHTML = "";
 }
 
 
@@ -393,3 +399,73 @@ window.onscroll = function() {
         }
     }
 }
+
+
+
+
+
+/* * * * * * * * * *  * 
+* Filter/Sort Buttons *
+* * * * * * * * * * * */
+function addFilterButtons() {
+    const filterDiv = document.querySelector(".filter-buttons");
+    filterDiv.innerHTML = `
+        <span class="filterSection">
+            All: <input type="radio" name="comp-check" id="all" data-filter="all" data-target="all" checked><br/>
+            Completed: <input type="radio" name="comp-check" id="completed" data-filter=".completed"><br/>
+            Incomplete: <input type="radio" name="comp-check" id="incomplete" data-filter=".incomplete"><br/>
+        </span>
+        <span class="sortSection">
+            <select class="select-filter">
+                <option value="difficulty">Difficulty</option>
+                <option value="distance">Distance</option>
+                <option value="elevation_gain">Elevation Gain</option>
+            </select>
+
+            <select class="type-filter">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+
+            <button type="button" id="filter-btn">Filter</button>
+        </span>
+    `
+
+    document.querySelector('#filter-btn').addEventListener('click', function() {
+        const selectFilter = document.querySelector('.select-filter').value;
+        const typeFilter = document.querySelector('.type-filter').value;
+
+        mixer.sort(`${selectFilter}:${typeFilter}`);
+    })
+    // // Filter Buttons
+    document.querySelector('#all').addEventListener('click', function () {
+        mixer.filter('all')
+    })
+
+    document.querySelector('#completed').addEventListener('click', function () {
+        mixer.filter('.completed')
+    })
+
+    document.querySelector('#incomplete').addEventListener('click', function () {
+        mixer.filter('.incomplete')
+    })
+}
+
+
+
+
+
+/* * * * * * * * * * * * 
+* -=> MIXER OBJECT <=- *
+* * * * * * * * * * *  */
+var mixer = mixitup('.main', {
+    load: {
+        sort: 'random'
+    },
+    selectors: {
+        target: '.card'
+    },
+    animation: {
+        duration: 500
+    }
+});
