@@ -15,19 +15,24 @@ class Trail {
         Trail.all.push(this);
     }
 
+
     render() {
+        // Add Image
         return `
-        <li>
-        <a href="#" data-id="${this.id}">${this.name}</a>
-        - ${this.location}
-        - ${this.difficulty}
-        - ${this.completion_time}
-        - ${this.elevation_gain}
-        - <button id="update" data-id="${this.id}">Edit</button>
-        - <button id="delete" data-id="${this.id}">Delete</button>
-        </li>
+            <div class="card">
+                <div class="inner">
+                    <img src="images/stock_trail.jpeg" alt="trail">
+                    <div class="overlay">
+                        <h4>${this.name}</h4>
+                        <span class="location">${this.location}</span>
+                        <span data-id="${this.id}" class="trail-button">Learn More</span>
+                    </div>
+                </div>
+            </div>
         `
     }
+
+
 
     static listTrails() {
         const main = document.querySelector("#main");

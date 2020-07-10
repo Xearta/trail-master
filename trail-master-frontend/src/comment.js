@@ -11,11 +11,11 @@ class Comment {
     }
 
     render() {
-        return `<li>
-        ${this.name}<br/>
-        ${this.content}<br/>
-        Trail ID: ${this.trail_id}<br/>
-        Created At: ${this.created_at}<br/>
+        return `
+        <li>
+        <span id="comment-name">${this.name} says: </span><br/>
+        <span id="comment-content">${this.content}</span><br/>
+        <span id="comment-date">Created At: ${this.created_at}</span><br/>
         <button id="delete-comment" data-id="${this.id}">Delete</button></li>
         </li><br/>
         `

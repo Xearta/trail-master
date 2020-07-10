@@ -3,34 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Trail Master</title>
 </head>
 <body>
-    <h1>Trail Master</h1>
+    
+    
+    <!-- Start Header/Navbar -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="navbar">
+                    <ul>
+                        <li id="all-trails-btn"><a href="#">All Trails</a></li>
+                        <li id="trail-form-btn"><a href="#">Add A Trail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header/Navbar -->
 
-    <div class="navbar">
-        <ul>
-            <li id="trail-form-btn"><a href="#">Add A Trail</a></li>
-            <li id="all-trails-btn"><a href="#">See Trails</a></li>
-        </ul>
+    
+
+    <!-- Start Title -->
+    <div class="section-title">
+        <h1>Trail Master</h1>
+    </div>
+    <!-- End Title -->
+
+
+
+    <!-- Start New Trail Modal -->
+    <div class="modal-bg">
+        <div class="container">
+            <div class="modal">
+            </div>
+        </div>
+    </div>
+    <!-- End New Trail Modal -->
+
+
+
+    <!-- Start Main Section -->
+    <section class="main-section" id="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="filter-buttons">
+                    <ul id="filter-btns">
+                        <!-- Add Filter Buttons -->
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="main" id="main">
+                    <!-- Cards In Here from JS -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- End Main Section -->
+    
+
+    <div class="container">
+        <div id="comments-form"></div>
     </div>
 
-    <div id="trail-form"></div>
+    
 
-    <div class="main" id="main">
-        <ul>
-
-        </ul>
-    </div>
-
-    <div id="comments-form"></div>
-
-    <div class="commentsBox" id="commentsBox">
-        <ul>
-
-        </ul>
-    </div>
-
+    <!-- Start Copyright -->
+    <section class="copyright">
+        <div class="container">
+            <p>&copy; 2020 Tanner Townsend. All rights reserved.</p>
+        </div>
+    </section>
+    <!-- End Copyright -->
     
     <script src="src/trail.js"></script>
     <script src="src/comment.js"></script>
