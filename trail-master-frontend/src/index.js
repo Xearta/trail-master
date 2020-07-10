@@ -91,7 +91,7 @@ function displayTrail() {
                 <li id="trail-details"><span id="label">Difficulty:</span> ${trail.difficulty}/5</li>
                 <li id="trail-details"><span id="label">Time to Complete:</span> ${trail.completion_time} hrs</li>
                 <li id="trail-details"><span id="label">Elevation Gain: +</span>${trail.elevation_gain} ft</li>
-
+                <br/>
                 <h3>Comments:</h3>
                 <div id="commentsContainer">
                     <ul>
@@ -102,8 +102,8 @@ function displayTrail() {
                 </div>
             </ul>
         </div>
-        <button id="update" data-id="${trail.id}">Edit</button>
-        <button id="delete" data-id="${trail.id}">Delete</button>
+        <button id="update" data-id="${trail.id}">Edit Trail</button>
+        <button id="delete" data-id="${trail.id}">Delete Trail</button>
     </div>`
     const commentsUl = document.querySelector('#commentsContainer ul');
     trail.comments.forEach(comment => commentsUl.innerHTML += comment.render())
@@ -278,7 +278,7 @@ function displayCommentForm() {
                 <input type="text" id="commenter-name"><br/>
                 <label>Comment Text: </label>
                 <textarea id="comment-text" rows="4" cols="50"></textarea><br/>
-                <input type="submit">
+                <input type="submit" value="Add Comment">
             </form>            
             `
     commentsFormDiv.innerHTML = form;

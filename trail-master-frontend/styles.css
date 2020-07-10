@@ -5,6 +5,7 @@ html {
 
 body {
     margin: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 * {
@@ -134,6 +135,8 @@ header .navbar ul li a.active::before {
 
 .section-title h1 {
     display: inline-block;
+    font-family: 'Yellowtail', cursive;
+    letter-spacing: 3px;
     font-size: 35px;
     text-transform: uppercase;
     font-weight: 700;
@@ -373,6 +376,7 @@ header .navbar ul li a.active::before {
 .main #trail-view #trail-view-contents {
     display: flex;
     padding-bottom: 20px;
+    border-radius: 10px;
 }
 
 .main #trail-view-contents img {
@@ -391,11 +395,13 @@ header .navbar ul li a.active::before {
 .main #update {
     position: absolute;
     top: 1270px;
+    background-color: rgba(255, 255, 0, 0.5);
 }
 
 .main #delete {
     position: absolute;
     top: 1302px;
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 
@@ -414,6 +420,10 @@ header .navbar ul li a.active::before {
     list-style: none;
     text-align: center;
     position: relative;
+}
+
+.main #trail-view-contents ul #trail-details {
+    transform: rotate(10deg);
 }
 
 .main #trail-view-contents ul #trail-details:before {
@@ -458,7 +468,7 @@ header .navbar ul li a.active::before {
 }   
 
 .main #trail-view-contents #commentsContainer ul li {
-    padding-bottom: 32px;
+    padding-bottom: 42px;
     border-bottom: 1px solid rgba(131, 131, 131, 0.5);
     margin: 0px 10px;
 }
@@ -466,6 +476,7 @@ header .navbar ul li a.active::before {
 .main #trail-view-contents #commentsContainer ul li button {
     position: absolute;
     right: 0px;
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 .main #trail-view-contents #commentsContainer ul li #comment-name {
@@ -489,10 +500,27 @@ header .navbar ul li a.active::before {
 .main #trail-view-contents #new-comments-form input[type="submit"] {
     position: absolute;
     right: 0px;
+    background-color: rgba(128, 230, 128, 0.5);
 }
 
 .main #trail-view-contents #new-comments-form input[type="text"] {
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main #trail-view-contents #new-comments-form input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+.main #trail-view-contents #new-comments-form textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main #trail-view-contents #new-comments-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 
