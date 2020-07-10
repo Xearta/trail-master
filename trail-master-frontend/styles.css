@@ -376,13 +376,16 @@ header .navbar ul li a.active::before {
 }
 
 .main #trail-view-contents img {
-    border-right: 1px solid #838383;
     flex: 0 0 calc(50% - 20px);
     padding: 10px;
+    margin: 10px;
+    background-color: #ffffff;
+    box-shadow: 2px 3px #888888;
     max-width: 50%;
     width: 50%;
     max-height: 700px;
     position: relative;
+    transform: rotate(-5deg);
 }
 
 .main #update {
@@ -407,6 +410,7 @@ header .navbar ul li a.active::before {
 }
 
 .main #trail-view-contents ul li {
+    font-size: 1.4em;
     list-style: none;
     text-align: center;
     position: relative;
