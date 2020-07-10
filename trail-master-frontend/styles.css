@@ -32,20 +32,37 @@ header {
     z-index: 11;
 }
 
+header.fixed {
+    background-color: #ffffff;
+    border-color: #eeeeee;
+    position: fixed;
+    z-index: 100;
+    animation: fixHeader 0.5s ease;
+}
+
+@keyframes fixHeader {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 header .row {
     justify-content: space-between;
     align-items: center;
 }
 
 header .navbar {
-    position: sticky;
     display: flex;
+    right: 0px;
+    padding: 1px;
 }
 
 header .navbar ul {
     display: flex;
     flex-wrap: wrap; 
-    flex: auto;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -53,6 +70,7 @@ header .navbar ul {
 
 header .navbar ul li {
     margin-left: 35px;
+    cursor: pointer;
 }
 
 header .navbar ul li a {
@@ -451,7 +469,6 @@ header .navbar ul li a.active::before {
     line-height: 1.2em;
     color: rgba(0, 0, 0, 0.8);
     left: 0px;
-    top: 2px;
 }
 
 .main #trail-view-contents #commentsContainer ul li #comment-date {

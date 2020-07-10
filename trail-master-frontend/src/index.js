@@ -95,6 +95,7 @@ function displayTrail() {
                 <h3>Comments:</h3>
                 <div id="commentsContainer">
                     <ul>
+                    <br/>
                     </ul>
                 </div>
                 <div id="new-comments-form">
@@ -332,4 +333,21 @@ function removeComment() {
         }
     })
     .then(event.target.parentElement.remove())
+}
+
+
+
+/* * * * * * * * *  *
+* NavBar Stickyness *
+* * * * * * * * * * */
+window.onscroll = function() {
+    const docScrollTop = document.documentElement.scrollTop;
+
+    if (window.innerWidth>800) {
+        if (docScrollTop>40) {
+            document.querySelector('header').classList.add("fixed");
+        } else {
+            document.querySelector('header').classList.remove("fixed");
+        }
+    }
 }
