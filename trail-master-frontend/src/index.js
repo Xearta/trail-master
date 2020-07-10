@@ -141,19 +141,19 @@ function displayCreateForm() {
                 <h2>Create A New Trail</h2>
                 <form>
                     <label>Trail Name:</label>
-                    <input type="text" id="name" placeholder="Appalachian Trail"><br/>
+                    <input required type="text" id="name" placeholder="Appalachian Trail"><br/>
                     <label>Start Location:</label>
-                    <input type="text" id="start_location" placeholder="Maine, USA"><br/>
+                    <input required type="text" id="start_location" placeholder="Maine, USA"><br/>
                     <label>End Location:</label>
-                    <input type="text" id="end_location" placeholder="Georgia, USA"><br/>
+                    <input required type="text" id="end_location" placeholder="Georgia, USA"><br/>
                     <label>Distance: [Miles]</label>
-                    <input type="number" id="distance" placeholder="2200"><br/>
+                    <input required type="number" id="distance" placeholder="2200"><br/>
                     <label>Difficulty: [1-5]</label>
-                    <input type="number" id="difficulty" placeholder="4"><br/>
+                    <input required type="number" id="difficulty" placeholder="4"><br/>
                     <label>Time To Complete: [Hours]</label>
-                    <input type="number" id="completion_time" placeholder="2200"><br/>
+                    <input required type="number" id="completion_time" placeholder="2200"><br/>
                     <label>Elevation Gain: [Feet]</label>
-                    <input type="number" id="elevation_gain" placeholder="2345"><br/>
+                    <input required type="number" id="elevation_gain" placeholder="2345"><br/>
                     <label>Trail Image URL: [Optional]</label>
                     <input type="url" id="image_url"><br/>
                     <input type="submit">
@@ -203,7 +203,7 @@ function createTrail() {
         }
     })
     .then(resp => resp.json())
-    .then(data => getTrails());
+    .then(data => getTrails())
 }
 
 
@@ -223,19 +223,19 @@ function editTrail() {
         <h2>Edit The Current Trail</h2>
         <form data-id="${id}">
             <label>Trail Name:</label>
-            <input type="text" id="name" value="${trail.name}"><br/>
+            <input required type="text" id="name" value="${trail.name}"><br/>
             <label>Start Location:</label>
-            <input type="text" id="start_location" value="${trail.start_location}"><br/>
+            <input required type="text" id="start_location" value="${trail.start_location}"><br/>
             <label>End Location:</label>
-            <input type="text" id="end_location" value="${trail.end_location}"><br/>
+            <input required type="text" id="end_location" value="${trail.end_location}"><br/>
             <label>Distance: [Miles]</label>
-            <input type="number" id="distance" value="${trail.distance}"><br/>
+            <input required type="number" id="distance" value="${trail.distance}"><br/>
             <label>Difficulty: [1-5]</label>
-            <input type="number" id="difficulty" value="${trail.difficulty}"><br/>
+            <input required type="number" id="difficulty" value="${trail.difficulty}"><br/>
             <label>Time To Complete: [Hours]</label>
-            <input type="number" id="completion_time" value="${trail.completion_time}"><br/>
+            <input required type="number" id="completion_time" value="${trail.completion_time}"><br/>
             <label>Elevation Gain: [Feet]</label>
-            <input type="number" id="elevation_gain" value="${trail.elevation_gain}"><br/>
+            <input required type="number" id="elevation_gain" value="${trail.elevation_gain}"><br/>
             <label>Trail Image URL</label>
             <input tye="url" id="image_url" value="${trail.image_url}"><br/>
             <input type="submit" value="Update Trail">
