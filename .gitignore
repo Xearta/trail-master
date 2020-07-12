@@ -1,2 +1,4 @@
 trail-master-backend/log/development.log
 trail-master-backend/log/development.log
+trail-master-backend/tmp/pids/server.pid
+trail-master-backend/log/development.log
