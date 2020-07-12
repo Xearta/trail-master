@@ -28,26 +28,12 @@ body {
 
 /* NAVBAR SECTION */
 header {
+    background-color: #ffffff;
     left: 0px;
     right: 0px;
     z-index: 11;
-}
-
-header.fixed {
-    background-color: #ffffff;
-    border-color: #eeeeee;
-    position: fixed;
-    z-index: 80;
-    animation: fixHeader 0.5s ease;
-}
-
-@keyframes fixHeader {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
+    position: sticky;
+    top: 0;
 }
 
 header .row {
@@ -221,6 +207,7 @@ header .navbar ul li a.active::before {
 .main-section {
     background-color: #f5f5dc;
     min-height: 100vh;
+    padding-top: 80px;
 }
 
 .main-section .main {
@@ -429,17 +416,19 @@ header .navbar ul li a.active::before {
 }
 
 .main #trail-complete {
-    top: 420px;
     background-color: rgba(0, 128, 0, 0.5);
 }
 
+.main #trail-complete.completed {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+
 .main #update {
-    top: 430px;
     background-color: rgba(255, 255, 0, 0.5);
 }
 
 .main #delete {
-    top: 460px;
     background-color: rgba(255, 0, 0, 0.5);
 }
 

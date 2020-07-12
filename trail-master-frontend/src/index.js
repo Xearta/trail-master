@@ -100,7 +100,7 @@ function displayTrail() {
     main.innerHTML += `
     <div id="trail-view">
         <h2 data-id="${id}">${trail.name}</h2><br/>
-        <button id="trail-complete" data-id="${trail.id}">${trail.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
+        <button id="trail-complete" data-id="${trail.id}" class="${trail.completed ? 'completed' : ''}">${trail.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
         <button id="update" data-id="${trail.id}">Edit Trail</button>
         <button id="delete" data-id="${trail.id}">Delete Trail</button>
         <div id="trail-view-contents">
@@ -308,7 +308,7 @@ function updateTrailCompletion() {
     event.preventDefault();
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
-    let complete_btn = document.querySelector('#trail-complete').firstChild;
+    let complete_btn = document.querySelector('#trail-complete');
 
     trail.completed = !trail.completed;
 
@@ -322,11 +322,9 @@ function updateTrailCompletion() {
     })
     .then(resp => resp.json())
     .then(data => {
-        trail.completed ? complete_btn.data = "Mark Incomplete" : complete_btn.data = "Mark Complete";
+        trail.completed ? complete_btn.firstChild.data = "Mark Incomplete" : complete_btn.firstChild.data = "Mark Complete";
+        trail.completed ? complete_btn.classList.add('completed') : complete_btn.classList.remove('completed');
     });
-
-
-    console.log(complete_btn);
 }
 
 
@@ -418,24 +416,6 @@ function removeComment() {
     })
     .then(event.target.parentElement.remove())
 }
-
-
-
-/* * * * * * * * *  *
-* NavBar Stickyness *
-* * * * * * * * * * */
-window.onscroll = function() {
-    const docScrollTop = document.documentElement.scrollTop;
-
-    if (window.innerWidth>800) {
-        if (docScrollTop>40) {
-            document.querySelector('header').classList.add("fixed");
-        } else {
-            document.querySelector('header').classList.remove("fixed");
-        }
-    }
-}
-
 
 
 
