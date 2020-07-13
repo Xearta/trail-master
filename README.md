@@ -1,14 +1,31 @@
 # Trail Master Application
 
-TODO: Add description
-
+Trail Master is a SPA (Single Page Application) that allows users to create, view, update, and delete *hiking* trails. The user can mark trails as completed, sort and filter trails, and even comment on the trails! The application utilizes Vanilla JavaScript, HTML, and CSS for the front-end and Ruby on Rails for the backend API. 
 
 
 ## Usage
-TODO: Add Instructions
-<!-- To use this app, just clone, run rails `db:migrate` and then run `rails s` for the server. It will be hosted on `http://localhost:3000` by default.
+This application is currently only available to run locally.
 
-*If you want pre-made data, you can run `rails db:seed` before starting the server.* -->
+First clone this repo and run the following commands:
+```
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
+If everything runs smoothly, the server should be running on your machine! Navigate to the `index.html` file in the `./trail-master-frontend` folder and view the application!
+
+## Endpoints - Trails
+|  Name |     Path    | HTTP Verb |        Purpose        |
+|:-----:|:-----------:|:---------:|:---------------------:|
+| Index |   /trails   |    GET    |  Displays all trails  |
+|  Show | /trails/:id |    GET    | Displays single trail |
+
+## Endpoints - Comments
+|  Name |    Path   | HTTP Verb |        Purpose        |
+|:-----:|:---------:|:---------:|:---------------------:|
+| Index | /comments |    GET    | Displays all comments |
 
 
 ## Contributing
