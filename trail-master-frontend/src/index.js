@@ -395,12 +395,7 @@ const removeComment = () => {
 const addFilterButtons = () => {
     const filterDiv = document.querySelector(".filter-buttons");
     filterDiv.innerHTML = `
-        <span class="filterSection">
-            All: <input type="radio" name="comp-check" id="all" data-filter="all" data-target="all" checked><br/>
-            Completed: <input type="radio" name="comp-check" id="completed" data-filter=".completed"><br/>
-            Incomplete: <input type="radio" name="comp-check" id="incomplete" data-filter=".incomplete"><br/>
-        </span>
-        <span class="sortSection">
+        <div class="sortSection">
             <select class="select-filter">
                 <option value="difficulty">Difficulty</option>
                 <option value="distance">Distance</option>
@@ -413,7 +408,14 @@ const addFilterButtons = () => {
             </select>
 
             <button type="button" id="filter-btn">Filter</button>
-        </span>
+        </div>
+        <div class="filterSection">
+            <ul>
+                <li>All: <input type="radio" name="comp-check" id="all" data-filter="all" data-target="all" checked></li>
+                <li>Completed: <input type="radio" name="comp-check" id="completed" data-filter=".completed"></li>
+                <li>Incomplete: <input type="radio" name="comp-check" id="incomplete" data-filter=".incomplete"></li>
+            </ul>
+        </div>
     `
 
     document.querySelector('#filter-btn').addEventListener('click', () => {
