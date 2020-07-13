@@ -34,9 +34,10 @@ const getTrails = () => {
         Trail.listTrails();
         attachClickToLinks();
         mixer.forceRefresh();
-        mixer.forceRender();
+        mixer.forceRender();       
     })
 }
+
 
 /*  * * * * * * * *
 * Clear All Forms *
@@ -108,8 +109,6 @@ const displayTrail = () => {
     displayCommentForm();
     attachClickToLinks();
 }
-
-
 
 
 /* * * * * * * * *  *
@@ -268,8 +267,6 @@ const updateTrail = () => {
 }
 
 
-
-
 /* * * * * * * * * * * * * * * * *
 * Trail Mark As Completed Action *
 * * * * * * * * * * * * * * * *  */
@@ -297,7 +294,6 @@ const updateTrailCompletion = () => {
 }
 
 
-
 /* * * * * * * * * *  * 
 * Trail Delete Action *
 * * * * * * * * * * * */
@@ -315,7 +311,6 @@ const removeTrail = () => {
     })
     .then(getTrails());
 }
-
 
 
 /* * * * * * * * *  *
@@ -367,7 +362,6 @@ const createComment = () => {
 }
 
 
-
 /* * * * * * * * *
 * Delete Comment *
 * * * * * * * * */
@@ -385,8 +379,6 @@ const removeComment = () => {
     })
     .then(event.target.parentElement.remove())
 }
-
-
 
 
 /* * * * * * * * * *  * 
@@ -409,6 +401,10 @@ const addFilterButtons = () => {
 
             <button type="button" id="filter-btn">Filter</button>
         </div>
+        <div class="filterSearch">
+            <input type="text" id="searchInput" placeholder="Search by name...">
+        </div>
+
         <div class="filterSection">
             <ul>
                 <li>All: <input type="radio" name="comp-check" id="all" data-filter="all" data-target="all" checked></li>
@@ -428,10 +424,25 @@ const addFilterButtons = () => {
     document.querySelector('#all').addEventListener('click', () => mixer.filter('all'))
     document.querySelector('#completed').addEventListener('click',() => mixer.filter('.completed'))
     document.querySelector('#incomplete').addEventListener('click', () => mixer.filter('.incomplete'))
+    document.querySelector('#searchInput').addEventListener('keyup', filterSearch);
 }
 
 
-
+/* * * * * * * * * * *  * 
+* -=> FILTER SEARCH <=- *
+* * * * * * * * * * *   */
+const filterSearch = () => {
+    let filterValue = document.querySelector('#searchInput').value.toUpperCase();
+    let names = document.querySelectorAll('.card .inner .overlay h4');
+    
+    names.forEach(name => {
+        if (name.textContent.toUpperCase().indexOf(filterValue) > -1) {
+            name.parentElement.parentElement.parentElement.style.display = '';
+        } else {
+            name.parentElement.parentElement.parentElement.style.display = 'none';
+        }
+    });
+}
 
 
 /* * * * * * * * * * * * 
