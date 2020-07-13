@@ -21,15 +21,9 @@ class Trail {
 
 
     render() {
-        if (this.completed) {
-            this.test = "completed"            
-        } else {
-            this.test = "incomplete"
-        }
-
         return `
-            <div class="mix ${this.test} card" data-difficulty="${this.difficulty}" data-distance="${this.distance}" 
-                                    data-elevation_gain="${this.elevation_gain}">
+            <div class="mix ${this.completed ? "completed" : "incomplete"} card" data-difficulty="${this.difficulty}" 
+            data-distance="${this.distance}" data-elevation_gain="${this.elevation_gain}">
                 <div class="inner">
                     <img src="${this.image_url}" alt="trail">
                     <div class="overlay">
@@ -42,13 +36,7 @@ class Trail {
         `
     }
 
-
-
     static listTrails() {
-        const main = document.querySelector("#main");
-        main.innerHTML = "";
-
-        
         Trail.all.forEach(trail => main.innerHTML += trail.render())
     }
 }
