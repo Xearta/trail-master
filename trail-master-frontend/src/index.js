@@ -402,7 +402,7 @@ const addFilterButtons = () => {
             <button type="button" id="filter-btn">Filter</button>
         </div>
         <div class="filterSearch">
-            <input type="text" id="searchInput" placeholder="Search by name...">
+            <input type="text" id="searchInput" placeholder="Search by name or location...">
         </div>
 
         <div class="filterSection">
@@ -433,15 +433,18 @@ const addFilterButtons = () => {
 * * * * * * * * * * *   */
 const filterSearch = () => {
     let filterValue = document.querySelector('#searchInput').value.toUpperCase();
-    let names = document.querySelectorAll('.card .inner .overlay h4');
+    let cards = document.querySelectorAll('.card');
     
-    names.forEach(name => {
-        if (name.textContent.toUpperCase().indexOf(filterValue) > -1) {
-            name.parentElement.parentElement.parentElement.style.display = '';
+    cards.forEach(card => {
+            let name = card.querySelector('h4');
+            let location = card.querySelector('.location');
+
+        if (name.textContent.toUpperCase().indexOf(filterValue) > -1 || location.textContent.toUpperCase().indexOf(filterValue) > -1) {
+            card.style.display = '';
         } else {
-            name.parentElement.parentElement.parentElement.style.display = 'none';
+            card.style.display = 'none';
         }
-    });
+    })
 }
 
 
