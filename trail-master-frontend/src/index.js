@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 /* * * * * * * * *
 * Get All Trails *
 * * * * * * * * */
-function getTrails() {
+const getTrails = () => {
     clearForm();
     addFilterButtons();
     const main = document.querySelector('#main');
@@ -18,40 +18,17 @@ function getTrails() {
     .then(trails => {
         Trail.all = [];
 
-        trails.map(trail => {
-            let id = trail.id;
-            let name = trail.name;
-            let start_location =  trail.start_location;
-            let end_location = trail.end_location;
-            let distance = trail.distance;
-            let difficulty = trail.difficulty;
-            let completion_time = trail.completion_time;
-            let elevation_gain = trail.elevation_gain;
-            let comments = trail.comments;
+        trails.map(trail => {            
             let image_url = trail.image_url;
-            let completed = trail.completed;
-            
-            
-            if (trail.image_url === null) {
-                image_url = "images/stock_trail.jpeg"
-            }
-
-
             let comments_array = [];
 
-            if (comments.length > 0) {     
-                comments.forEach(comment => {
-                    let comment_id = comment.id;
-                    let comment_name = comment.name;
-                    let comment_content = comment.content;
-                    let trail_id = comment.trail_id;
-                    let comment_created = comment.created_at;
+            if (trail.image_url === null || trail.image_url === "")
+                image_url = "images/stock_trail.jpeg"
 
-                    comments_array.push(new Comment(comment_id, comment_name, comment_content, trail_id, comment_created));                
-                })                 
-            }
+            if (trail.comments.length > 0)  
+                trail.comments.forEach(comment => comments_array.push(new Comment(comment.id, comment.name, comment.content, comment.trail_id, comment.created_at)));                 
 
-            new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed, comments_array);
+            new Trail(trail.id, trail.name, trail.start_location, trail.end_location, trail.distance, trail.difficulty, trail.completion_time, trail.elevation_gain, image_url, trail.completed, comments_array);
         })
 
         Trail.listTrails();
@@ -64,7 +41,7 @@ function getTrails() {
 /*  * * * * * * * *
 * Clear All Forms *
 * * * * * * * * * */
-function clearForm() {
+const clearForm = () => {
     const trailFormDiv = document.querySelector(".modal");
     const filterDiv = document.querySelector(".filter-buttons");
     trailFormDiv.innerHTML = "";
@@ -75,29 +52,30 @@ function clearForm() {
 /* * * * * * * * *
 * Attach  Clicks *
 * * * * * * * * */
-function attachClickToLinks() {
+const attachClickToLinks = () => {
     let trails = document.querySelectorAll('#main li a');
-    trails.forEach(trail => {
-        trail.addEventListener('click', displayTrail);
-    })
+    trails.forEach(trail => trail.addEventListener('click', displayTrail));
 
     document.querySelector("#trail-form-btn").addEventListener('click', displayCreateForm);
     document.querySelector("#all-trails-btn").addEventListener('click', getTrails);
     document.querySelectorAll('.trail-button').forEach(trail => trail.addEventListener('click', displayTrail)); 
+    document.querySelectorAll('#delete-comment').forEach(btn => btn.addEventListener('click', removeComment));
+    document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail));
+    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));
+    document.querySelectorAll('#trail-complete').forEach(trail => trail.addEventListener('click', updateTrailCompletion));
 }
 
 
 /* * * * * * * * * *
 * Trail Show Page  *
 * * * * * * * * * */
-function displayTrail() {
+const displayTrail = () => {
     clearForm();
     const main = document.querySelector("#main");
-    main.innerHTML = "";
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
 
-    main.innerHTML += `
+    main.innerHTML = `
     <div id="trail-view">
         <h2 data-id="${id}">${trail.name}</h2><br/>
         <button id="trail-complete" data-id="${trail.id}" class="${trail.completed ? 'completed' : ''}">${trail.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
@@ -125,13 +103,10 @@ function displayTrail() {
         </div>
     </div>`
     const commentsUl = document.querySelector('#commentsContainer ul');
-    trail.comments.forEach(comment => commentsUl.innerHTML += comment.render())
+    trail.comments.forEach(comment => commentsUl.innerHTML += comment.render());
     
-    document.querySelectorAll('#delete-comment').forEach(btn => btn.addEventListener('click', removeComment));
-    document.querySelectorAll('#update').forEach(trail => trail.addEventListener('click', editTrail));
-    document.querySelectorAll("#delete").forEach(trail => trail.addEventListener('click',removeTrail));
-    document.querySelectorAll('#trail-complete').forEach(trail => trail.addEventListener('click', updateTrailCompletion));
     displayCommentForm();
+    attachClickToLinks();
 }
 
 
@@ -140,7 +115,7 @@ function displayTrail() {
 /* * * * * * * * *  *
 * Create Trail Form *
 * * * * * * * * * * */
-function displayCreateForm() {
+const displayCreateForm = () => {
     const trailFormDiv = document.querySelector('.modal');
     const modalBg = document.querySelector('.modal-bg');
     modalBg.classList.add('active');
@@ -169,21 +144,19 @@ function displayCreateForm() {
                 <span class="modal-close">X</span>
                 `
     trailFormDiv.innerHTML = form;
-    document.querySelector('form').addEventListener('submit', createTrail);
     const modalClose = document.querySelector('.modal-close');
-    modalClose.addEventListener('click', function() {
-        modalBg.classList.remove('active');
-    });
+    document.querySelector('form').addEventListener('submit', createTrail);
+    modalClose.addEventListener('click', () => modalBg.classList.remove('active'));
 }
 
 
 /* * * * * * * * * *  * 
 * Trail Create Action *
 * * * * * * * * * * * */
-function createTrail() {
+const createTrail = () => {
     event.preventDefault();
-    const modalBg = document.querySelector('.modal-bg');
-    modalBg.classList.remove('active');
+    document.querySelector('.modal-bg').classList.remove('active');
+
     let id;
     let name = document.querySelector('#name').value;
     let start_location =  document.querySelector('#start_location').value;
@@ -193,15 +166,12 @@ function createTrail() {
     let completion_time = document.querySelector('#completion_time').value;
     let elevation_gain = document.querySelector('#elevation_gain').value;
     let image_url = document.querySelector("#image_url").value;
-    let completed = false;
 
 
-    if (image_url === null || image_url === "") {
+    if (image_url === null || image_url === "")
         image_url = "images/stock_trail.jpeg"
-    }
 
-
-    let trail = new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed);
+    let trail = new Trail(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed="false");
 
 
     fetch(BASE_URL+'/trails/', {
@@ -220,7 +190,7 @@ function createTrail() {
 /* * * * * * * * * *
 * Trail Edit Form  *
 * * * * * * * * *  */
-function editTrail() {
+const editTrail = () => {
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
     event.preventDefault();
@@ -229,6 +199,7 @@ function editTrail() {
     const trailFormDiv = document.querySelector('.modal');
     const modalBg = document.querySelector('.modal-bg');
     modalBg.classList.add('active');
+    
         let form = `
         <h2>Edit The Current Trail</h2>
         <form data-id="${id}">
@@ -256,21 +227,20 @@ function editTrail() {
         trailFormDiv.innerHTML = form;
         document.querySelector('form').addEventListener('submit', updateTrail);
         const modalClose = document.querySelector('.modal-close');
-        modalClose.addEventListener('click', function() {
-            modalBg.classList.remove('active');
-        });
+        modalClose.addEventListener('click', () => modalBg.classList.remove('active'));
 }
 
 
 /* * * * * * * * * *  *
 * Trail Update Action *
 * * * * * * * * * * * */
-function updateTrail() {
+const updateTrail = () => {
     event.preventDefault();
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
     const modalBg = document.querySelector('.modal-bg');
     modalBg.classList.remove('active');
+    
 
     trail.name = document.querySelector('#name').value;
     trail.start_location =  document.querySelector('#start_location').value;
@@ -281,9 +251,8 @@ function updateTrail() {
     trail.elevation_gain = document.querySelector('#elevation_gain').value;
     trail.image_url = document.querySelector("#image_url").value;
 
-    if (image_url === null || image_url === "") {
+    if (image_url === null || image_url === "")
         image_url = "images/stock_trail.jpeg"
-    }
 
 
     fetch(BASE_URL+'/trails/'+id, {
@@ -302,9 +271,9 @@ function updateTrail() {
 
 
 /* * * * * * * * * * * * * * * * *
-* Trail Update Completion Action *
+* Trail Mark As Completed Action *
 * * * * * * * * * * * * * * * *  */
-function updateTrailCompletion() {
+const updateTrailCompletion = () => {
     event.preventDefault();
     let id = event.target.dataset.id;
     const trail = Trail.all.find(trail => trail.id == id);
@@ -332,7 +301,7 @@ function updateTrailCompletion() {
 /* * * * * * * * * *  * 
 * Trail Delete Action *
 * * * * * * * * * * * */
-function removeTrail() {
+const removeTrail = () => {
     let id = event.target.dataset.id;
     event.preventDefault();
     clearForm();
@@ -352,7 +321,7 @@ function removeTrail() {
 /* * * * * * * * *  *
 * Add Comments Form *
 * * * * * * * * * * */
-function displayCommentForm() {
+const displayCommentForm = () => {
     const commentsFormDiv = document.querySelector("#new-comments-form");
     let form = `
             <form>
@@ -371,7 +340,7 @@ function displayCommentForm() {
 /* * * * * * * *  *
 * Create Comments *
 * * * * * * * * * */
-function createComment() {
+const createComment = () => {
     event.preventDefault();
     let id;
     let name = document.querySelector('#commenter-name').value;
@@ -390,7 +359,7 @@ function createComment() {
         }
     })
     .then(resp => resp.json())
-    .then(newComment => {
+    .then(newComment => {       
         displayCommentForm();
         const commentsUl = document.querySelector('#commentsContainer ul');
         commentsUl.innerHTML += comment.render();
@@ -402,7 +371,7 @@ function createComment() {
 /* * * * * * * * *
 * Delete Comment *
 * * * * * * * * */
-function removeComment() {
+const removeComment = () => {
     let id = event.target.dataset.id;
     event.preventDefault();
     clearForm();
@@ -423,7 +392,7 @@ function removeComment() {
 /* * * * * * * * * *  * 
 * Filter/Sort Buttons *
 * * * * * * * * * * * */
-function addFilterButtons() {
+const addFilterButtons = () => {
     const filterDiv = document.querySelector(".filter-buttons");
     filterDiv.innerHTML = `
         <span class="filterSection">
@@ -447,24 +416,16 @@ function addFilterButtons() {
         </span>
     `
 
-    document.querySelector('#filter-btn').addEventListener('click', function() {
+    document.querySelector('#filter-btn').addEventListener('click', () => {
         const selectFilter = document.querySelector('.select-filter').value;
         const typeFilter = document.querySelector('.type-filter').value;
 
         mixer.sort(`${selectFilter}:${typeFilter}`);
     })
     // // Filter Buttons
-    document.querySelector('#all').addEventListener('click', function () {
-        mixer.filter('all')
-    })
-
-    document.querySelector('#completed').addEventListener('click', function () {
-        mixer.filter('.completed')
-    })
-
-    document.querySelector('#incomplete').addEventListener('click', function () {
-        mixer.filter('.incomplete')
-    })
+    document.querySelector('#all').addEventListener('click', () => mixer.filter('all'))
+    document.querySelector('#completed').addEventListener('click',() => mixer.filter('.completed'))
+    document.querySelector('#incomplete').addEventListener('click', () => mixer.filter('.incomplete'))
 }
 
 
@@ -474,7 +435,7 @@ function addFilterButtons() {
 /* * * * * * * * * * * * 
 * -=> MIXER OBJECT <=- *
 * * * * * * * * * * *  */
-var mixer = mixitup('.main', {
+let mixer = mixitup('.main', {
     load: {
         sort: 'random'
     },
