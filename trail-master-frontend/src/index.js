@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://js-trail-master-api.herokuapp.com';
 
 window.addEventListener('load', () => {
   getTrails();
