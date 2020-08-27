@@ -22,15 +22,9 @@ const getTrails = () => {
         let comments_array = [];
 
         if (trail.image_url === null || trail.image_url === '') image_url = 'images/stock_trail.jpeg';
+        if (trail.comments.length > 0) trail.comments.forEach(comment => comments_array.push(new Comment(comment)));
 
-        if (trail.comments.length > 0)
-          trail.comments.forEach(comment =>
-            comments_array.push(
-              new Comment(comment.id, comment.name, comment.content, comment.trail_id, comment.created_at)
-            )
-          );
-
-        new Trail(trail);
+        new Trail(trail, comments_array);
       });
 
       Trail.listTrails();
@@ -104,6 +98,7 @@ const displayTrail = () => {
             </ul>
         </div>
     </div>`;
+
   const commentsUl = document.querySelector('#commentsContainer ul');
   trail.comments.forEach(comment => (commentsUl.innerHTML += comment.render()));
 

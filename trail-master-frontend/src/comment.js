@@ -2,12 +2,12 @@
  ***** Comment Class ****
  */
 class Comment {
-  constructor(id, name, content, trail_id, created_at) {
-    this.id = id;
-    this.name = name;
-    this.content = content;
-    this.trail_id = trail_id;
-    this.created_at = created_at;
+  constructor(comment) {
+    this.id = comment.id;
+    this.name = comment.name;
+    this.content = comment.content;
+    this.trail_id = comment.trail_id;
+    this.created_at = comment.created_at;
   }
 
   render() {

@@ -4,7 +4,7 @@
 class Trail {
   static all = [];
 
-  constructor(trail) {
+  constructor(trail, comments_array) {
     this.id = trail.id;
     this.name = trail.name;
     this.start_location = trail.start_location;
@@ -15,7 +15,7 @@ class Trail {
     this.elevation_gain = trail.elevation_gain;
     this.image_url = trail.image_url;
     this.completed = trail.completed;
-    this.comments = trail.comments;
+    this.comments = comments_array;
     Trail.all.push(this);
   }
 
