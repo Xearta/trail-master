@@ -1,28 +1,27 @@
 /*
-**** Trail Class ****
-*/
+ **** Trail Class ****
+ */
 class Trail {
-    static all = [];
-    
-    constructor(id, name, start_location, end_location, distance, difficulty, completion_time, elevation_gain, image_url, completed, comments) {
-        this.id = id;
-        this.name = name;
-        this.start_location = start_location;
-        this.end_location = end_location;
-        this.distance = distance;
-        this.difficulty = difficulty;
-        this.completion_time = completion_time;
-        this.elevation_gain = elevation_gain;
-        this.image_url = image_url;
-        this.completed = completed;
-        this.comments = comments;
-        Trail.all.push(this);
-    }
+  static all = [];
 
+  constructor(trail) {
+    this.id = trail.id;
+    this.name = trail.name;
+    this.start_location = trail.start_location;
+    this.end_location = trail.end_location;
+    this.distance = trail.distance;
+    this.difficulty = trail.difficulty;
+    this.completion_time = trail.completion_time;
+    this.elevation_gain = trail.elevation_gain;
+    this.image_url = trail.image_url;
+    this.completed = trail.completed;
+    this.comments = trail.comments;
+    Trail.all.push(this);
+  }
 
-    render() {
-        return `
-            <div class="mix ${this.completed ? "completed" : "incomplete"} card" data-difficulty="${this.difficulty}" 
+  render() {
+    return `
+            <div class="mix ${this.completed ? 'completed' : 'incomplete'} card" data-difficulty="${this.difficulty}" 
             data-distance="${this.distance}" data-elevation_gain="${this.elevation_gain}">
                 <div class="inner">
                     <img src="${this.image_url}" alt="trail">
@@ -33,10 +32,10 @@ class Trail {
                     </div>
                 </div>
             </div>
-        `
-    }
+        `;
+  }
 
-    static listTrails() {
-        Trail.all.forEach(trail => main.innerHTML += trail.render())
-    }
+  static listTrails() {
+    Trail.all.forEach(trail => (main.innerHTML += trail.render()));
+  }
 }
