@@ -8,6 +8,9 @@ Trail Master is a SPA (Single Page Application) that allows users to create, vie
 ## Preview of Trail Page
 <img src="https://i.imgur.com/aCLYNLq.png" />
 
+## Preview of Create A Trail Modal
+<img src="https://i.imgur.com/S0EOba0.png" />
+
 
 ## Usage
 This application is currently only available to run locally.
