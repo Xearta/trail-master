@@ -2,6 +2,9 @@
 
 Trail Master is a SPA (Single Page Application) that allows users to create, view, update, and delete *hiking* trails. The user can mark trails as completed, sort and filter trails, and even comment on the trails! The application utilizes Vanilla JavaScript, HTML, and CSS for the front-end and Ruby on Rails for the backend API. 
 
+## Preview of Homepage
+<img src="https://i.imgur.com/aomNipD.png" />
+
 
 ## Usage
 This application is currently only available to run locally.
